@@ -9,36 +9,36 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@polkadot/api-derive@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/@polkadot/api-derive/download/@polkadot/api-derive-3.2.1.tgz#f608be335a136b1661dbc78067ee7bb19b48088e"
-  integrity sha1-9gi+M1oTaxZh28eAZ+57sZtICI4=
+"@polkadot/api-derive@3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/@polkadot/api-derive/download/@polkadot/api-derive-3.2.3.tgz#69adb0a17efafb7e0ce936fd53278140245d919b"
+  integrity sha1-aa2woX76+34M6Tb9UyeBQCRdkZs=
   dependencies:
     "@babel/runtime" "^7.12.5"
-    "@polkadot/api" "3.2.1"
-    "@polkadot/rpc-core" "3.2.1"
-    "@polkadot/types" "3.2.1"
+    "@polkadot/api" "3.2.3"
+    "@polkadot/rpc-core" "3.2.3"
+    "@polkadot/types" "3.2.3"
     "@polkadot/util" "^5.2.2"
     "@polkadot/util-crypto" "^5.2.2"
-    "@polkadot/x-rxjs" "3.2.1"
+    "@polkadot/x-rxjs" "3.2.3"
     bn.js "^4.11.9"
 
-"@polkadot/api@3.2.1", "@polkadot/api@^3.2.1":
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/@polkadot/api/download/@polkadot/api-3.2.1.tgz#c74df1ccfadbb79b00c053b50c472ea70dd6ecc3"
-  integrity sha1-x03xzPrbt5sAwFO1DEcupw3W7MM=
+"@polkadot/api@3.2.3", "@polkadot/api@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/@polkadot/api/download/@polkadot/api-3.2.3.tgz#9b27845d80937fac42663368e08f0b5c113efb93"
+  integrity sha1-myeEXYCTf6xCZjNo4I8LXBE++5M=
   dependencies:
     "@babel/runtime" "^7.12.5"
-    "@polkadot/api-derive" "3.2.1"
+    "@polkadot/api-derive" "3.2.3"
     "@polkadot/keyring" "^5.2.2"
-    "@polkadot/metadata" "3.2.1"
-    "@polkadot/rpc-core" "3.2.1"
-    "@polkadot/rpc-provider" "3.2.1"
-    "@polkadot/types" "3.2.1"
-    "@polkadot/types-known" "3.2.1"
+    "@polkadot/metadata" "3.2.3"
+    "@polkadot/rpc-core" "3.2.3"
+    "@polkadot/rpc-provider" "3.2.3"
+    "@polkadot/types" "3.2.3"
+    "@polkadot/types-known" "3.2.3"
     "@polkadot/util" "^5.2.2"
     "@polkadot/util-crypto" "^5.2.2"
-    "@polkadot/x-rxjs" "3.2.1"
+    "@polkadot/x-rxjs" "3.2.3"
     bn.js "^4.11.9"
     eventemitter3 "^4.0.7"
 
@@ -51,14 +51,14 @@
     "@polkadot/util" "5.2.2"
     "@polkadot/util-crypto" "5.2.2"
 
-"@polkadot/metadata@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/@polkadot/metadata/download/@polkadot/metadata-3.2.1.tgz#1b186cbf8da2e82ffb6c452305dd1a76e816b880"
-  integrity sha1-Gxhsv42i6C/7bEUjBd0adugWuIA=
+"@polkadot/metadata@3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/@polkadot/metadata/download/@polkadot/metadata-3.2.3.tgz#4858755b00bd6344e6761596dc5de0363b2d7d0c"
+  integrity sha1-SFh1WwC9Y0TmdhWW3F3gNjstfQw=
   dependencies:
     "@babel/runtime" "^7.12.5"
-    "@polkadot/types" "3.2.1"
-    "@polkadot/types-known" "3.2.1"
+    "@polkadot/types" "3.2.3"
+    "@polkadot/types-known" "3.2.3"
     "@polkadot/util" "^5.2.2"
     "@polkadot/util-crypto" "^5.2.2"
     bn.js "^4.11.9"
@@ -70,25 +70,25 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@polkadot/rpc-core@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/@polkadot/rpc-core/download/@polkadot/rpc-core-3.2.1.tgz#113231afae673ddac097f1ec570d08063945e1ca"
-  integrity sha1-ETIxr65nPdrAl/HsVw0IBjlF4co=
+"@polkadot/rpc-core@3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/@polkadot/rpc-core/download/@polkadot/rpc-core-3.2.3.tgz#f1feffd5035827be64d64c89a4e43381d6a5d9ef"
+  integrity sha1-8f7/1QNYJ75k1kyJpOQzgdal2e8=
   dependencies:
     "@babel/runtime" "^7.12.5"
-    "@polkadot/metadata" "3.2.1"
-    "@polkadot/rpc-provider" "3.2.1"
-    "@polkadot/types" "3.2.1"
+    "@polkadot/metadata" "3.2.3"
+    "@polkadot/rpc-provider" "3.2.3"
+    "@polkadot/types" "3.2.3"
     "@polkadot/util" "^5.2.2"
-    "@polkadot/x-rxjs" "3.2.1"
+    "@polkadot/x-rxjs" "3.2.3"
 
-"@polkadot/rpc-provider@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/@polkadot/rpc-provider/download/@polkadot/rpc-provider-3.2.1.tgz#66ef7a7b7907864e00f086d25d0cf707bd2ff666"
-  integrity sha1-Zu96e3kHhk4A8IbSXQz3B70v9mY=
+"@polkadot/rpc-provider@3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/@polkadot/rpc-provider/download/@polkadot/rpc-provider-3.2.3.tgz#eeca4cc724a9338c3e54fb8dc494047627d92b41"
+  integrity sha1-7spMxySpM4w+VPuNxJQEdifZK0E=
   dependencies:
     "@babel/runtime" "^7.12.5"
-    "@polkadot/types" "3.2.1"
+    "@polkadot/types" "3.2.3"
     "@polkadot/util" "^5.2.2"
     "@polkadot/util-crypto" "^5.2.2"
     "@polkadot/x-fetch" "^5.2.2"
@@ -96,26 +96,26 @@
     bn.js "^4.11.9"
     eventemitter3 "^4.0.7"
 
-"@polkadot/types-known@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/@polkadot/types-known/download/@polkadot/types-known-3.2.1.tgz#90297c58876db98e79cef3ccd57629ae0af7b7d0"
-  integrity sha1-kCl8WIdtuY55zvPM1XYprgr3t9A=
+"@polkadot/types-known@3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/@polkadot/types-known/download/@polkadot/types-known-3.2.3.tgz#aabeab49ed09efb128485648c3ac8b899cb9b064"
+  integrity sha1-qr6rSe0J77EoSFZIw6yLiZy5sGQ=
   dependencies:
     "@babel/runtime" "^7.12.5"
-    "@polkadot/types" "3.2.1"
+    "@polkadot/types" "3.2.3"
     "@polkadot/util" "^5.2.2"
     bn.js "^4.11.9"
 
-"@polkadot/types@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/@polkadot/types/download/@polkadot/types-3.2.1.tgz#c9f46934df4d2cf908657c638e387087aa2aa17b"
-  integrity sha1-yfRpNN9NLPkIZXxjjjhwh6oqoXs=
+"@polkadot/types@3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/@polkadot/types/download/@polkadot/types-3.2.3.tgz#581092cce7981cac3a87fb9e5eeb2e263809ea93"
+  integrity sha1-WBCSzOeYHKw6h/ueXusuJjgJ6pM=
   dependencies:
     "@babel/runtime" "^7.12.5"
-    "@polkadot/metadata" "3.2.1"
+    "@polkadot/metadata" "3.2.3"
     "@polkadot/util" "^5.2.2"
     "@polkadot/util-crypto" "^5.2.2"
-    "@polkadot/x-rxjs" "3.2.1"
+    "@polkadot/x-rxjs" "3.2.3"
     "@types/bn.js" "^4.11.6"
     bn.js "^4.11.9"
 
@@ -192,10 +192,10 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@polkadot/x-rxjs@3.2.1":
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/@polkadot/x-rxjs/download/@polkadot/x-rxjs-3.2.1.tgz#7575c27a5064d0d7d7a1fb24307cbd7a8f6aa237"
-  integrity sha1-dXXCelBk0NfXofskMHy9eo9qojc=
+"@polkadot/x-rxjs@3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/@polkadot/x-rxjs/download/@polkadot/x-rxjs-3.2.3.tgz#be19daf1a013604fd0dbcfb267994c5e3839b19b"
+  integrity sha1-vhna8aATYE/Q28+yZ5lMXjg5sZs=
   dependencies:
     "@babel/runtime" "^7.12.5"
     rxjs "^6.6.3"
