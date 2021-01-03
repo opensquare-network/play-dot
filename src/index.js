@@ -35,4 +35,13 @@ async function metadata(api) {
   console.log(metadata.toJSON())
 }
 
+async function getVoting(api) {
+  const blockHash = '0xecdc04e286c797a32839e196212033d2072e7d0f07ed516b7102906f9000137e';
+  const motionHash = '0x59fe7bd64951667f91f36db33077b1ada93b093b363a32cf869d2a833d72ce08';
+  const votingObject = await api.query.council.voting.at(blockHash, motionHash)
+
+  const json = votingObject.toJSON();
+  console.log(json)
+}
+
 main().catch(console.error);
