@@ -1,6 +1,5 @@
 const { ApiPromise, WsProvider } = require("@polkadot/api");
 const { keyring, cryptoWaitReady } = require("@polkadot/ui-keyring");
-const { decodeAddress } = require("@polkadot/keyring")
 
 let provider = null;
 let api = null;
@@ -31,13 +30,12 @@ async function testMultisig() {
 
   keyring.loadAll({ ss58Format: 2, type: 'sr25519' });
 
-  // const addresses = ['HEkh52pShreLjbiGuewsnbXTeXFiq5mxqF3TffeHRjsbuN5', 'HyBryanRsB1GGKa9ZfqvRc3XpTDipYyRvxNNyZYfWFcenhd']
-  const addresses = ['HyBryanRsB1GGKa9ZfqvRc3XpTDipYyRvxNNyZYfWFcenhd', 'HEkh52pShreLjbiGuewsnbXTeXFiq5mxqF3TffeHRjsbuN5']
+  const addresses = ['HyBryanRsB1GGKa9ZfqvRc3XpTDipYyRvxNNyZYfWFcenhd', 'EindYaUViAdardcU5gzFbQxh1jCcuQwhoKQK9vi1e2MkAPd', 'HEkh52pShreLjbiGuewsnbXTeXFiq5mxqF3TffeHRjsbuN5']
+  // const addresses = ['EindYaUViAdardcU5gzFbQxh1jCcuQwhoKQK9vi1e2MkAPd', 'HyBryanRsB1GGKa9ZfqvRc3XpTDipYyRvxNNyZYfWFcenhd', 'HEkh52pShreLjbiGuewsnbXTeXFiq5mxqF3TffeHRjsbuN5']
   const result = keyring.addMultisig(addresses, 2);
 
   const { address } = result.pair;
-  const decoded = decodeAddress(addresses)
-  console.log(result)
+  console.log(address)
 }
 
 async function readTip(api) {
