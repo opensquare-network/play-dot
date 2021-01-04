@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@polkadot/api": "^3.2.3"
+    "@polkadot/api": "^3.2.3",
+    "@polkadot/ui-keyring": "^0.65.1"
   }
 }
