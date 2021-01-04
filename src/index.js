@@ -17,7 +17,8 @@ async function getApi() {
 
 async function main() {
   const api = await getApi();
-  await readTip(api)
+  // await readTip(api)
+  await metadata(api)
 }
 
 async function readTip(api) {
@@ -29,7 +30,8 @@ async function readTip(api) {
 }
 
 async function metadata(api) {
-  const metadata = await api.rpc.state.getMetadata('0xb0a8d493285c2df73290dfb7e61f870f17b41801197a149ca93654499ea3dafe');
+  // const metadata = await api.rpc.state.getMetadata('0xb0a8d493285c2df73290dfb7e61f870f17b41801197a149ca93654499ea3dafe');
+  const metadata = await api.rpc.state.getMetadata();
   console.log("Magic number: " + metadata.magicNumber);
   console.log("Metadata: " + metadata.raw);
   console.log(metadata.toJSON())
