@@ -23,7 +23,17 @@ async function main() {
   // await metadata(api)
   // await testMultisig();
 
-  await testRawCall(api)
+  // await testRawCall(api)
+  await testBatch(api)
+}
+
+async function testBatch(api) {
+  const blockHash = await api.rpc.chain.getBlockHash(5571590);
+  const block = await api.rpc.chain.getBlock(blockHash);
+
+  const extrinsics = block.block.extrinsics;
+
+  console.log(block)
 }
 
 async function testRawCall(api) {
