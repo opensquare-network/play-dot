@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@polkadot/api": "^3.2.3",
+    "@polkadot/types": "^3.2.3",
     "@polkadot/ui-keyring": "^0.65.1"
   }
 }

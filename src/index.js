@@ -1,5 +1,6 @@
 const { ApiPromise, WsProvider } = require("@polkadot/api");
 const { keyring, cryptoWaitReady } = require("@polkadot/ui-keyring");
+const { GenericCall } = require("@polkadot/types");
 
 let provider = null;
 let api = null;
@@ -17,12 +18,21 @@ async function getApi() {
 }
 
 async function main() {
-  // const api = await getApi();
+  const api = await getApi();
   // await readTip(api)
   // await metadata(api)
+  // await testMultisig();
 
+  await testRawCall(api)
+}
 
-  await testMultisig();
+async function testRawCall(api) {
+  const blockHash = await api.rpc.chain.getBlockHash(5379799);
+  const registry = await api.getBlockRegistry(blockHash);
+  const raw = '0x12063844124e14e714ba8b0ebd31b8153338fb3305aa3c524c298f6f83bf91befc500b00f0ab75a40d';
+  const call = new GenericCall(registry.registry, raw);
+
+  console.log(call)
 }
 
 async function testMultisig() {
@@ -57,7 +67,7 @@ async function metadata(api) {
 async function getVoting(api) {
   const blockHash = '0xecdc04e286c797a32839e196212033d2072e7d0f07ed516b7102906f9000137e';
   const motionHash = '0x59fe7bd64951667f91f36db33077b1ada93b093b363a32cf869d2a833d72ce08';
-  const votingObject = await api.query.council.voting.at(blockHash, motionHash)
+  const votingObject = await api.query.council.voting.at(blockHash, motionHash);
 
   const json = votingObject.toJSON();
   console.log(json)
