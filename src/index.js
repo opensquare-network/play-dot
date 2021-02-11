@@ -24,7 +24,8 @@ async function main() {
   // await testMultisig();
 
   // await testRawCall(api)
-  await testBatch(api)
+  // await testBatch(api)
+  await getBounty(api)
 }
 
 async function testBatch(api) {
@@ -81,6 +82,13 @@ async function getVoting(api) {
 
   const json = votingObject.toJSON();
   console.log(json)
+}
+
+async function getBounty(api) {
+  const blockHash = await api.rpc.chain.getBlockHash(6161169);
+  const meta = await api.query.bounties.bounties.at(blockHash, 2);
+
+  console.log(meta)
 }
 
 main().catch(console.error);
