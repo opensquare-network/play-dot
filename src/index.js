@@ -2,7 +2,7 @@ const { ApiPromise, WsProvider } = require("@polkadot/api");
 const { keyring, cryptoWaitReady } = require("@polkadot/ui-keyring");
 const { GenericCall, UInt, Percent, Permill } = require("@polkadot/types");
 const { expandMetadata } = require("@polkadot/metadata");
-const { u8aToHex } = require("@polkadot/util");
+const { u8aToHex, compactStripLength } = require("@polkadot/util");
 
 let provider = null;
 let api = null;
@@ -22,8 +22,9 @@ async function getApi() {
 async function main() {
   const api = await getApi();
 
-  await querySystemAccount(api);
-  // await queryBalance(api);
+  // await querySystemAccount(api);
+  // await qBalance(api);
+  await queryBalance(api);
   // await getTippersCount(api);
 
   // await readTip(api)
@@ -43,22 +44,38 @@ async function main() {
 const TreasuryAccount = "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29";
 
 async function querySystemAccount() {
-  const blockHash = await api.rpc.chain.getBlockHash(1492896);
+  const blockHash = await api.rpc.chain.getBlockHash(1375086);
   const a1 = await api.query.system.account.at(blockHash, TreasuryAccount);
   console.log(a1.toJSON())
 }
 
-async function queryBalance(api) {
-  const blockHash = await api.rpc.chain.getBlockHash(432000);
+async function qBalance(api) {
+  // 1492896
+  const blockHash = await api.rpc.chain.getBlockHash(1492895);
 
   const metadata = await api.rpc.state.getMetadata(blockHash);
   const decorated = expandMetadata(metadata.registry, metadata);
+
   const value = await api.rpc.state.getStorage([decorated.query.balances.freeBalance, TreasuryAccount], blockHash);
+  console.log(metadata.registry.createType('Compact<Balance>', value).toJSON());
+}
 
-  console.log(metadata.registry.createType('Compact<Balance>', value).toHuman());
+async function queryBalance(api) {
+  const blockHash = await api.rpc.chain.getBlockHash(1375085);
 
-  const totalIssuanceValue = await api.rpc.state.getStorage([decorated.query.balances.totalIssuance], blockHash);
-  console.log(metadata.registry.createType('Compact<Balance>', totalIssuanceValue).toHuman());
+  const metadata = await api.rpc.state.getMetadata(blockHash);
+  const decorated = expandMetadata(metadata.registry, metadata);
+
+  const key = compactStripLength(decorated.query.balances.freeBalance(TreasuryAccount));
+
+  // const value = await api.rpc.state.getStorage(key, blockHash);
+
+  const value = await api.rpc.state.getStorage(key, blockHash);
+
+  console.log(metadata.registry.createType('Compact<Balance>', value).toJSON());
+
+  // const totalIssuanceValue = await api.rpc.state.getStorage([decorated.query.balances.totalIssuance], blockHash);
+  // console.log(metadata.registry.createType('Compact<Balance>', totalIssuanceValue).toString());
 
   // const key = u8aToHex(decorated.query.balances.freeBalance(TreasuryAccount));
   // const value = await api.rpc.state.getStorage(key, blockHash);
