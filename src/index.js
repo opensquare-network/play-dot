@@ -1,6 +1,8 @@
 const { ApiPromise, WsProvider } = require("@polkadot/api");
 const { keyring, cryptoWaitReady } = require("@polkadot/ui-keyring");
 const { GenericCall, UInt, Percent, Permill } = require("@polkadot/types");
+const { expandMetadata } = require("@polkadot/metadata");
+const { u8aToHex } = require("@polkadot/util");
 
 let provider = null;
 let api = null;
@@ -20,7 +22,9 @@ async function getApi() {
 async function main() {
   const api = await getApi();
 
-  await getTippersCount(api);
+  await querySystemAccount(api);
+  // await queryBalance(api);
+  // await getTippersCount(api);
 
   // await readTip(api)
   // await metadata(api)
@@ -34,6 +38,45 @@ async function main() {
   // console.log(p)
   // console.log(Permill);
   // await testQueryConst(api)
+}
+
+const TreasuryAccount = "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29";
+
+async function querySystemAccount() {
+  const blockHash = await api.rpc.chain.getBlockHash(1492896);
+  const a1 = await api.query.system.account.at(blockHash, TreasuryAccount);
+  console.log(a1.toJSON())
+}
+
+async function queryBalance(api) {
+  const blockHash = await api.rpc.chain.getBlockHash(432000);
+
+  const metadata = await api.rpc.state.getMetadata(blockHash);
+  const decorated = expandMetadata(metadata.registry, metadata);
+  const value = await api.rpc.state.getStorage([decorated.query.balances.freeBalance, TreasuryAccount], blockHash);
+
+  console.log(metadata.registry.createType('Compact<Balance>', value).toHuman());
+
+  const totalIssuanceValue = await api.rpc.state.getStorage([decorated.query.balances.totalIssuance], blockHash);
+  console.log(metadata.registry.createType('Compact<Balance>', totalIssuanceValue).toHuman());
+
+  // const key = u8aToHex(decorated.query.balances.freeBalance(TreasuryAccount));
+  // const value = await api.rpc.state.getStorage(key, blockHash);
+  //
+  // console.log(metadata.registry.createType('Compact<Balance>', value).toHuman());
+  //
+  // const totalIssuanceKey = u8aToHex(decorated.query.balances.totalIssuance());
+  // const totalIssuanceValue = await api.rpc.state.getStorage(key, blockHash);
+  //
+
+  // const registry = await api.getBlockRegistry(blockHash);
+  // const metadata = registry.metadata;
+  //
+  // const a1 = await api.query.system.account.at(blockHash, TreasuryAccount);
+  // const a2 = await api.query.balances.account.at(blockHash, TreasuryAccount);
+  //
+  // console.log('a1', a1.toJSON());
+  // console.log('a2', a2.toJSON());
 }
 
 async function testQueryConst(api) {
@@ -114,7 +157,6 @@ async function getBounty(api) {
 async function getTippersCount(api) {
   const blockHash = '0x7cffec4ac944ba0e88b93348f369ebca6d24a7851bec7b7f25edc6c33fe70148';
 
-  await api.consts
   const members = await api.query.electionsPhragmen.members.at(blockHash);
   const Type = api.query.electionsPhragmen.members.meta.type;
 
@@ -123,4 +165,4 @@ async function getTippersCount(api) {
   return members.length;
 }
 
-main().catch(console.error);
+main().catch(console.error).finally(() => {process.exit(0)});
