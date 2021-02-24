@@ -2,23 +2,16 @@
 # yarn lockfile v1
 
 
-"@babel/runtime@^7.12.13":
-  version "7.12.13"
-  resolved "https://r.cnpmjs.org/@babel/runtime/download/@babel/runtime-7.12.13.tgz#0a21452352b02542db0ffb928ac2d3ca7cb6d66d"
-  integrity sha1-CiFFI1KwJULbD/uSisLTyny21m0=
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
-"@babel/runtime@^7.12.5":
-  version "7.12.5"
-  resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.12.5.tgz?cache=0&sync_timestamp=1604441112982&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
-  integrity sha1-QQ5+SHRB4bNgwpvnFdhw2bmFiC4=
+"@babel/runtime@^7.12.13", "@babel/runtime@^7.12.18", "@babel/runtime@^7.12.5":
+  version "7.13.6"
+  resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.13.6.tgz?cache=0&sync_timestamp=1614102809747&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.13.6.tgz#86e0fad6cbb46a680e21c1aa4748717a058d345a"
+  integrity sha1-huD61su0amgOIcGqR0hxegWNNFo=
   dependencies:
     regenerator-runtime "^0.13.4"
 
 "@ledgerhq/devices@^5.43.0":
   version "5.43.0"
-  resolved "https://r.cnpmjs.org/@ledgerhq/devices/download/@ledgerhq/devices-5.43.0.tgz#9b8ca838a7f8ece74098dc84aa6468eb7651972d"
+  resolved "https://registry.npm.taobao.org/@ledgerhq/devices/download/@ledgerhq/devices-5.43.0.tgz#9b8ca838a7f8ece74098dc84aa6468eb7651972d"
   integrity sha1-m4yoOKf47OdAmNyEqmRo63ZRly0=
   dependencies:
     "@ledgerhq/errors" "^5.43.0"
@@ -28,12 +21,12 @@
 
 "@ledgerhq/errors@^5.43.0":
   version "5.43.0"
-  resolved "https://r.cnpmjs.org/@ledgerhq/errors/download/@ledgerhq/errors-5.43.0.tgz#6bec77ebc31c4333a7f8d13b1f3f4d739b859b75"
+  resolved "https://registry.npm.taobao.org/@ledgerhq/errors/download/@ledgerhq/errors-5.43.0.tgz#6bec77ebc31c4333a7f8d13b1f3f4d739b859b75"
   integrity sha1-a+x368McQzOn+NE7Hz9Nc5uFm3U=
 
 "@ledgerhq/hw-transport-node-hid-noevents@^5.43.0":
   version "5.43.0"
-  resolved "https://r.cnpmjs.org/@ledgerhq/hw-transport-node-hid-noevents/download/@ledgerhq/hw-transport-node-hid-noevents-5.43.0.tgz#42faf14019f5cc4e46335539d0e6e05d5acfc470"
+  resolved "https://registry.npm.taobao.org/@ledgerhq/hw-transport-node-hid-noevents/download/@ledgerhq/hw-transport-node-hid-noevents-5.43.0.tgz#42faf14019f5cc4e46335539d0e6e05d5acfc470"
   integrity sha1-QvrxQBn1zE5GM1U50ObgXVrPxHA=
   dependencies:
     "@ledgerhq/devices" "^5.43.0"
@@ -42,9 +35,9 @@
     "@ledgerhq/logs" "^5.43.0"
     node-hid "2.1.1"
 
-"@ledgerhq/hw-transport-node-hid-singleton@^5.41.0":
+"@ledgerhq/hw-transport-node-hid-singleton@^5.43.0":
   version "5.43.0"
-  resolved "https://r.cnpmjs.org/@ledgerhq/hw-transport-node-hid-singleton/download/@ledgerhq/hw-transport-node-hid-singleton-5.43.0.tgz#e7008afa1179ca1340b2f29debcd9eb624e1214a"
+  resolved "https://registry.npm.taobao.org/@ledgerhq/hw-transport-node-hid-singleton/download/@ledgerhq/hw-transport-node-hid-singleton-5.43.0.tgz#e7008afa1179ca1340b2f29debcd9eb624e1214a"
   integrity sha1-5wCK+hF5yhNAsvKd682etiThIUo=
   dependencies:
     "@ledgerhq/devices" "^5.43.0"
@@ -56,9 +49,9 @@
     node-hid "2.1.1"
     usb-detection "^4.10.0"
 
-"@ledgerhq/hw-transport-webusb@^5.41.0":
+"@ledgerhq/hw-transport-webusb@^5.43.0":
   version "5.43.0"
-  resolved "https://r.cnpmjs.org/@ledgerhq/hw-transport-webusb/download/@ledgerhq/hw-transport-webusb-5.43.0.tgz#02fa4a51dd93efae73e2caa1005be9782c381066"
+  resolved "https://registry.npm.taobao.org/@ledgerhq/hw-transport-webusb/download/@ledgerhq/hw-transport-webusb-5.43.0.tgz#02fa4a51dd93efae73e2caa1005be9782c381066"
   integrity sha1-AvpKUd2T765z4sqhAFvpeCw4EGY=
   dependencies:
     "@ledgerhq/devices" "^5.43.0"
@@ -68,7 +61,7 @@
 
 "@ledgerhq/hw-transport@^5.38.0", "@ledgerhq/hw-transport@^5.43.0":
   version "5.43.0"
-  resolved "https://r.cnpmjs.org/@ledgerhq/hw-transport/download/@ledgerhq/hw-transport-5.43.0.tgz#dc9863706d31bae96aed66f193b8922a876cbf82"
+  resolved "https://registry.npm.taobao.org/@ledgerhq/hw-transport/download/@ledgerhq/hw-transport-5.43.0.tgz#dc9863706d31bae96aed66f193b8922a876cbf82"
   integrity sha1-3JhjcG0xuulq7Wbxk7iSKodsv4I=
   dependencies:
     "@ledgerhq/devices" "^5.43.0"
@@ -77,144 +70,144 @@
 
 "@ledgerhq/logs@^5.43.0":
   version "5.43.0"
-  resolved "https://r.cnpmjs.org/@ledgerhq/logs/download/@ledgerhq/logs-5.43.0.tgz#031bad4b8a3525c5e14210afde0bc09c79564026"
+  resolved "https://registry.npm.taobao.org/@ledgerhq/logs/download/@ledgerhq/logs-5.43.0.tgz#031bad4b8a3525c5e14210afde0bc09c79564026"
   integrity sha1-AxutS4o1JcXhQhCv3gvAnHlWQCY=
 
-"@polkadot/api-derive@3.8.1":
-  version "3.8.1"
-  resolved "https://r.cnpmjs.org/@polkadot/api-derive/download/@polkadot/api-derive-3.8.1.tgz#24dbbed16e016d8d6cc58b6e16495dd4c1f6871a"
-  integrity sha1-JNu+0W4BbY1sxYtuFkld1MH2hxo=
+"@polkadot/api-derive@3.10.2":
+  version "3.10.2"
+  resolved "https://registry.npm.taobao.org/@polkadot/api-derive/download/@polkadot/api-derive-3.10.2.tgz#e2486a89b6cc284bb81e43d52792972845d5a1a5"
+  integrity sha1-4khqibbMKEu4HkPVJ5KXKEXVoaU=
   dependencies:
-    "@babel/runtime" "^7.12.13"
-    "@polkadot/api" "3.8.1"
-    "@polkadot/rpc-core" "3.8.1"
-    "@polkadot/types" "3.8.1"
-    "@polkadot/util" "^5.6.1"
-    "@polkadot/util-crypto" "^5.6.1"
-    "@polkadot/x-rxjs" "^5.6.1"
+    "@babel/runtime" "^7.12.18"
+    "@polkadot/api" "3.10.2"
+    "@polkadot/rpc-core" "3.10.2"
+    "@polkadot/types" "3.10.2"
+    "@polkadot/util" "^5.7.1"
+    "@polkadot/util-crypto" "^5.7.1"
+    "@polkadot/x-rxjs" "^5.7.1"
     bn.js "^4.11.9"
 
-"@polkadot/api@3.8.1", "@polkadot/api@^3.8.1":
-  version "3.8.1"
-  resolved "https://r.cnpmjs.org/@polkadot/api/download/@polkadot/api-3.8.1.tgz#32d6d4efde1f76b170ba2985f136be4fd52ab1b8"
-  integrity sha1-MtbU794fdrFwuimF8Ta+T9Uqsbg=
+"@polkadot/api@3.10.2", "@polkadot/api@^3.9.3":
+  version "3.10.2"
+  resolved "https://registry.npm.taobao.org/@polkadot/api/download/@polkadot/api-3.10.2.tgz#ec0773554539bed96ee35570ff1c678180480c33"
+  integrity sha1-7AdzVUU5vtlu41Vw/xxngYBIDDM=
   dependencies:
-    "@babel/runtime" "^7.12.13"
-    "@polkadot/api-derive" "3.8.1"
-    "@polkadot/keyring" "^5.6.1"
-    "@polkadot/metadata" "3.8.1"
-    "@polkadot/rpc-core" "3.8.1"
-    "@polkadot/rpc-provider" "3.8.1"
-    "@polkadot/types" "3.8.1"
-    "@polkadot/types-known" "3.8.1"
-    "@polkadot/util" "^5.6.1"
-    "@polkadot/util-crypto" "^5.6.1"
-    "@polkadot/x-rxjs" "^5.6.1"
+    "@babel/runtime" "^7.12.18"
+    "@polkadot/api-derive" "3.10.2"
+    "@polkadot/keyring" "^5.7.1"
+    "@polkadot/metadata" "3.10.2"
+    "@polkadot/rpc-core" "3.10.2"
+    "@polkadot/rpc-provider" "3.10.2"
+    "@polkadot/types" "3.10.2"
+    "@polkadot/types-known" "3.10.2"
+    "@polkadot/util" "^5.7.1"
+    "@polkadot/util-crypto" "^5.7.1"
+    "@polkadot/x-rxjs" "^5.7.1"
     bn.js "^4.11.9"
     eventemitter3 "^4.0.7"
 
-"@polkadot/hw-ledger-transports@5.6.2":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/hw-ledger-transports/download/@polkadot/hw-ledger-transports-5.6.2.tgz#b4785929e346e5bd03119a5ab1b5b5b273d3cad7"
-  integrity sha1-tHhZKeNG5b0DEZpasbW1snPTytc=
+"@polkadot/hw-ledger-transports@5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/hw-ledger-transports/download/@polkadot/hw-ledger-transports-5.7.1.tgz#3a8046c73ffb6aafaee0fed6417a702f31441c50"
+  integrity sha1-OoBGxz/7aq+u4P7WQXpwLzFEHFA=
   dependencies:
     "@babel/runtime" "^7.12.13"
-    "@ledgerhq/hw-transport-webusb" "^5.41.0"
+    "@ledgerhq/hw-transport-webusb" "^5.43.0"
   optionalDependencies:
-    "@ledgerhq/hw-transport-node-hid-singleton" "^5.41.0"
+    "@ledgerhq/hw-transport-node-hid-singleton" "^5.43.0"
 
 "@polkadot/hw-ledger@^5.6.1":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/hw-ledger/download/@polkadot/hw-ledger-5.6.2.tgz#886909b5918dda2dc4dbff6064ca9fa7b0c9e72e"
-  integrity sha1-iGkJtZGN2i3E2/9gZMqfp7DJ5y4=
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/hw-ledger/download/@polkadot/hw-ledger-5.7.1.tgz#6f7d7d19254fb35958340fed55bd815016fdc1dd"
+  integrity sha1-b319GSVPs1lYNA/tVb2BUBb9wd0=
   dependencies:
     "@babel/runtime" "^7.12.13"
-    "@polkadot/hw-ledger-transports" "5.6.2"
-    "@polkadot/util" "^5.6.2"
-    "@zondax/ledger-polkadot" "^0.13.0"
+    "@polkadot/hw-ledger-transports" "5.7.1"
+    "@polkadot/util" "^5.7.1"
+    "@zondax/ledger-polkadot" "^0.13.1"
 
-"@polkadot/keyring@^5.6.1":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/keyring/download/@polkadot/keyring-5.6.2.tgz#9335d7cf21df10ad99580d8f070bfaa63327f797"
-  integrity sha1-kzXXzyHfEK2ZWA2PBwv6pjMn95c=
+"@polkadot/keyring@^5.6.1", "@polkadot/keyring@^5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/keyring/download/@polkadot/keyring-5.7.1.tgz#e4883f5a8379dd9d371d4f56beaabe7cb2666023"
+  integrity sha1-5Ig/WoN53Z03HU9Wvqq+fLJmYCM=
   dependencies:
     "@babel/runtime" "^7.12.13"
-    "@polkadot/util" "5.6.2"
-    "@polkadot/util-crypto" "5.6.2"
+    "@polkadot/util" "5.7.1"
+    "@polkadot/util-crypto" "5.7.1"
 
-"@polkadot/metadata@3.8.1":
-  version "3.8.1"
-  resolved "https://r.cnpmjs.org/@polkadot/metadata/download/@polkadot/metadata-3.8.1.tgz#bfef0381b79166dc84f673ff86e3baec4344aa28"
-  integrity sha1-v+8DgbeRZtyE9nP/huO67ENEqig=
+"@polkadot/metadata@3.10.2":
+  version "3.10.2"
+  resolved "https://registry.npm.taobao.org/@polkadot/metadata/download/@polkadot/metadata-3.10.2.tgz#c4fcb3478f3c7318ec13e3b35257d61e269da8b6"
+  integrity sha1-xPyzR488cxjsE+OzUlfWHiadqLY=
   dependencies:
-    "@babel/runtime" "^7.12.13"
-    "@polkadot/types" "3.8.1"
-    "@polkadot/types-known" "3.8.1"
-    "@polkadot/util" "^5.6.1"
-    "@polkadot/util-crypto" "^5.6.1"
+    "@babel/runtime" "^7.12.18"
+    "@polkadot/types" "3.10.2"
+    "@polkadot/types-known" "3.10.2"
+    "@polkadot/util" "^5.7.1"
+    "@polkadot/util-crypto" "^5.7.1"
     bn.js "^4.11.9"
 
-"@polkadot/networks@5.6.2", "@polkadot/networks@^5.6.1":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/networks/download/@polkadot/networks-5.6.2.tgz#acc62fb581adaa606908207fc8d0585112e513d1"
-  integrity sha1-rMYvtYGtqmBpCCB/yNBYURLlE9E=
+"@polkadot/networks@5.7.1", "@polkadot/networks@^5.6.1", "@polkadot/networks@^5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/networks/download/@polkadot/networks-5.7.1.tgz#550636c43cae310b32ce3d0009683b9a35f1910f"
+  integrity sha1-VQY2xDyuMQsyzj0ACWg7mjXxkQ8=
   dependencies:
     "@babel/runtime" "^7.12.13"
 
-"@polkadot/rpc-core@3.8.1":
-  version "3.8.1"
-  resolved "https://r.cnpmjs.org/@polkadot/rpc-core/download/@polkadot/rpc-core-3.8.1.tgz#bcd1bc1d287d6f25ff5a7cf02b970a41e0ccfef2"
-  integrity sha1-vNG8HSh9byX/WnzwK5cKQeDM/vI=
+"@polkadot/rpc-core@3.10.2":
+  version "3.10.2"
+  resolved "https://registry.npm.taobao.org/@polkadot/rpc-core/download/@polkadot/rpc-core-3.10.2.tgz#cee31b274b7b6498ad8be31321ccf5afd6229a13"
+  integrity sha1-zuMbJ0t7ZJiti+MTIcz1r9YimhM=
   dependencies:
-    "@babel/runtime" "^7.12.13"
-    "@polkadot/metadata" "3.8.1"
-    "@polkadot/rpc-provider" "3.8.1"
-    "@polkadot/types" "3.8.1"
-    "@polkadot/util" "^5.6.1"
-    "@polkadot/x-rxjs" "^5.6.1"
+    "@babel/runtime" "^7.12.18"
+    "@polkadot/metadata" "3.10.2"
+    "@polkadot/rpc-provider" "3.10.2"
+    "@polkadot/types" "3.10.2"
+    "@polkadot/util" "^5.7.1"
+    "@polkadot/x-rxjs" "^5.7.1"
 
-"@polkadot/rpc-provider@3.8.1":
-  version "3.8.1"
-  resolved "https://r.cnpmjs.org/@polkadot/rpc-provider/download/@polkadot/rpc-provider-3.8.1.tgz#ebe51ddc0db4b20d8852bf1425f994f83836461d"
-  integrity sha1-6+Ud3A20sg2IUr8UJfmU+Dg2Rh0=
+"@polkadot/rpc-provider@3.10.2":
+  version "3.10.2"
+  resolved "https://registry.npm.taobao.org/@polkadot/rpc-provider/download/@polkadot/rpc-provider-3.10.2.tgz#d98e55027e503902f215d58d1e8951602d598ea9"
+  integrity sha1-2Y5VAn5QOQLyFdWNHolRYC1Zjqk=
   dependencies:
-    "@babel/runtime" "^7.12.13"
-    "@polkadot/types" "3.8.1"
-    "@polkadot/util" "^5.6.1"
-    "@polkadot/util-crypto" "^5.6.1"
-    "@polkadot/x-fetch" "^5.6.1"
-    "@polkadot/x-global" "^5.6.1"
-    "@polkadot/x-ws" "^5.6.1"
+    "@babel/runtime" "^7.12.18"
+    "@polkadot/types" "3.10.2"
+    "@polkadot/util" "^5.7.1"
+    "@polkadot/util-crypto" "^5.7.1"
+    "@polkadot/x-fetch" "^5.7.1"
+    "@polkadot/x-global" "^5.7.1"
+    "@polkadot/x-ws" "^5.7.1"
     bn.js "^4.11.9"
     eventemitter3 "^4.0.7"
 
-"@polkadot/types-known@3.8.1":
-  version "3.8.1"
-  resolved "https://r.cnpmjs.org/@polkadot/types-known/download/@polkadot/types-known-3.8.1.tgz#408e6165a1ddff484689fb0b252ef62960297b7e"
-  integrity sha1-QI5hZaHd/0hGifsLJS72KWApe34=
+"@polkadot/types-known@3.10.2":
+  version "3.10.2"
+  resolved "https://registry.npm.taobao.org/@polkadot/types-known/download/@polkadot/types-known-3.10.2.tgz#0374105eb52c95861a8c47df9bf5db6764ac239e"
+  integrity sha1-A3QQXrUslYYajEffm/XbZ2SsI54=
   dependencies:
-    "@babel/runtime" "^7.12.13"
-    "@polkadot/networks" "^5.6.1"
-    "@polkadot/types" "3.8.1"
-    "@polkadot/util" "^5.6.1"
+    "@babel/runtime" "^7.12.18"
+    "@polkadot/networks" "^5.7.1"
+    "@polkadot/types" "3.10.2"
+    "@polkadot/util" "^5.7.1"
     bn.js "^4.11.9"
 
-"@polkadot/types@3.8.1", "@polkadot/types@^3.8.1":
-  version "3.8.1"
-  resolved "https://r.cnpmjs.org/@polkadot/types/download/@polkadot/types-3.8.1.tgz#e1c59016bc91c3b25d925837f3781811aff616a1"
-  integrity sha1-4cWQFryRw7Jdklg383gYEa/2FqE=
+"@polkadot/types@3.10.2", "@polkadot/types@^3.9.3":
+  version "3.10.2"
+  resolved "https://registry.npm.taobao.org/@polkadot/types/download/@polkadot/types-3.10.2.tgz#ea6773be52674f6c50055102e533aba174c59490"
+  integrity sha1-6mdzvlJnT2xQBVEC5TOroXTFlJA=
   dependencies:
-    "@babel/runtime" "^7.12.13"
-    "@polkadot/metadata" "3.8.1"
-    "@polkadot/util" "^5.6.1"
-    "@polkadot/util-crypto" "^5.6.1"
-    "@polkadot/x-rxjs" "^5.6.1"
+    "@babel/runtime" "^7.12.18"
+    "@polkadot/metadata" "3.10.2"
+    "@polkadot/util" "^5.7.1"
+    "@polkadot/util-crypto" "^5.7.1"
+    "@polkadot/x-rxjs" "^5.7.1"
     "@types/bn.js" "^4.11.6"
     bn.js "^4.11.9"
 
 "@polkadot/ui-keyring@^0.69.1":
   version "0.69.1"
-  resolved "https://r.cnpmjs.org/@polkadot/ui-keyring/download/@polkadot/ui-keyring-0.69.1.tgz#569e01eea35bcd1cb0683d35492ac543a760598f"
+  resolved "https://registry.npm.taobao.org/@polkadot/ui-keyring/download/@polkadot/ui-keyring-0.69.1.tgz#569e01eea35bcd1cb0683d35492ac543a760598f"
   integrity sha1-Vp4B7qNbzRywaD01SSrFQ6dgWY8=
   dependencies:
     "@babel/runtime" "^7.12.13"
@@ -228,7 +221,7 @@
 
 "@polkadot/ui-settings@0.69.1":
   version "0.69.1"
-  resolved "https://r.cnpmjs.org/@polkadot/ui-settings/download/@polkadot/ui-settings-0.69.1.tgz#aa0840f4e7803ef9f98bbc6e31f6bb033393aab2"
+  resolved "https://registry.npm.taobao.org/@polkadot/ui-settings/download/@polkadot/ui-settings-0.69.1.tgz#aa0840f4e7803ef9f98bbc6e31f6bb033393aab2"
   integrity sha1-qghA9OeAPvn5i7xuMfa7AzOTqrI=
   dependencies:
     "@babel/runtime" "^7.12.13"
@@ -237,16 +230,16 @@
     eventemitter3 "^4.0.7"
     store "^2.0.12"
 
-"@polkadot/util-crypto@5.6.2", "@polkadot/util-crypto@^5.6.1":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/util-crypto/download/@polkadot/util-crypto-5.6.2.tgz#5703afdfe93d15cd16b90b47ffc1a83625c176ec"
-  integrity sha1-VwOv3+k9Fc0WuQtH/8GoNiXBduw=
+"@polkadot/util-crypto@5.7.1", "@polkadot/util-crypto@^5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/util-crypto/download/@polkadot/util-crypto-5.7.1.tgz#f96771c4a775676fd122b8c0529574a40bcd4b31"
+  integrity sha1-+WdxxKd1Z2/RIrjAUpV0pAvNSzE=
   dependencies:
     "@babel/runtime" "^7.12.13"
-    "@polkadot/networks" "5.6.2"
-    "@polkadot/util" "5.6.2"
-    "@polkadot/wasm-crypto" "^3.2.2"
-    "@polkadot/x-randomvalues" "5.6.2"
+    "@polkadot/networks" "5.7.1"
+    "@polkadot/util" "5.7.1"
+    "@polkadot/wasm-crypto" "^3.2.3"
+    "@polkadot/x-randomvalues" "5.7.1"
     base-x "^3.0.8"
     blakejs "^1.1.0"
     bn.js "^4.11.9"
@@ -258,100 +251,100 @@
     tweetnacl "^1.0.3"
     xxhashjs "^0.2.2"
 
-"@polkadot/util@5.6.2", "@polkadot/util@^5.6.1", "@polkadot/util@^5.6.2":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/util/download/@polkadot/util-5.6.2.tgz#c85ee096a8137d7005c16a26b242f932dcd9f242"
-  integrity sha1-yF7glqgTfXAFwWomskL5MtzZ8kI=
+"@polkadot/util@5.7.1", "@polkadot/util@^5.6.1", "@polkadot/util@^5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/util/download/@polkadot/util-5.7.1.tgz#fa1d9805ba2b35f5543485f7ba16c3da1cb1c368"
+  integrity sha1-+h2YBborNfVUNIX3uhbD2hyxw2g=
   dependencies:
     "@babel/runtime" "^7.12.13"
-    "@polkadot/x-textdecoder" "5.6.2"
-    "@polkadot/x-textencoder" "5.6.2"
+    "@polkadot/x-textdecoder" "5.7.1"
+    "@polkadot/x-textencoder" "5.7.1"
     "@types/bn.js" "^4.11.6"
     bn.js "^4.11.9"
     camelcase "^5.3.1"
     ip-regex "^4.3.0"
 
-"@polkadot/wasm-crypto-asmjs@^3.2.2":
-  version "3.2.2"
-  resolved "https://r.cnpmjs.org/@polkadot/wasm-crypto-asmjs/download/@polkadot/wasm-crypto-asmjs-3.2.2.tgz#b18af677764d6943cba3c225ba28e9626760704c"
-  integrity sha1-sYr2d3ZNaUPLo8IluijpYmdgcEw=
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-
-"@polkadot/wasm-crypto-wasm@^3.2.2":
-  version "3.2.2"
-  resolved "https://r.cnpmjs.org/@polkadot/wasm-crypto-wasm/download/@polkadot/wasm-crypto-wasm-3.2.2.tgz#44f8713d1db19efe13ea4c598f13a8495b24b49f"
-  integrity sha1-RPhxPR2xnv4T6kxZjxOoSVsktJ8=
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-
-"@polkadot/wasm-crypto@^3.2.2":
-  version "3.2.2"
-  resolved "https://r.cnpmjs.org/@polkadot/wasm-crypto/download/@polkadot/wasm-crypto-3.2.2.tgz#732d36f2dcd4c327696d078ad2efc64b70ca8586"
-  integrity sha1-cy028tzUwydpbQeK0u/GS3DKhYY=
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-    "@polkadot/wasm-crypto-asmjs" "^3.2.2"
-    "@polkadot/wasm-crypto-wasm" "^3.2.2"
-
-"@polkadot/x-fetch@^5.6.1":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/x-fetch/download/@polkadot/x-fetch-5.6.2.tgz#36052a0c5a5308c4c0ac14889725584996b22556"
-  integrity sha1-NgUqDFpTCMTArBSIlyVYSZayJVY=
+"@polkadot/wasm-crypto-asmjs@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/@polkadot/wasm-crypto-asmjs/download/@polkadot/wasm-crypto-asmjs-3.2.3.tgz#e214f23f77c856081eb997630c5631d4b69155fd"
+  integrity sha1-4hTyP3fIVggeuZdjDFYx1LaRVf0=
   dependencies:
     "@babel/runtime" "^7.12.13"
-    "@polkadot/x-global" "5.6.2"
+
+"@polkadot/wasm-crypto-wasm@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/@polkadot/wasm-crypto-wasm/download/@polkadot/wasm-crypto-wasm-3.2.3.tgz#48ace6e52e4e8828b0ca9c52de69cdf8a8d3df19"
+  integrity sha1-SKzm5S5OiCiwypxS3mnN+KjT3xk=
+  dependencies:
+    "@babel/runtime" "^7.12.13"
+
+"@polkadot/wasm-crypto@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/@polkadot/wasm-crypto/download/@polkadot/wasm-crypto-3.2.3.tgz#fa98239847da56b574827cfb5f940645a7fb5678"
+  integrity sha1-+pgjmEfaVrV0gnz7X5QGRaf7Vng=
+  dependencies:
+    "@babel/runtime" "^7.12.13"
+    "@polkadot/wasm-crypto-asmjs" "^3.2.3"
+    "@polkadot/wasm-crypto-wasm" "^3.2.3"
+
+"@polkadot/x-fetch@^5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/x-fetch/download/@polkadot/x-fetch-5.7.1.tgz#c21ce0cb2da2c691b3585d46ff9ed9f7d33923fd"
+  integrity sha1-whzgyy2ixpGzWF1G/57Z99M5I/0=
+  dependencies:
+    "@babel/runtime" "^7.12.13"
+    "@polkadot/x-global" "5.7.1"
     "@types/node-fetch" "^2.5.8"
     node-fetch "^2.6.1"
 
-"@polkadot/x-global@5.6.2", "@polkadot/x-global@^5.6.1":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/x-global/download/@polkadot/x-global-5.6.2.tgz#14a0f0422232899d3b03e9668b014792b5460506"
-  integrity sha1-FKDwQiIyiZ07A+lmiwFHkrVGBQY=
+"@polkadot/x-global@5.7.1", "@polkadot/x-global@^5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/x-global/download/@polkadot/x-global-5.7.1.tgz#04bb8ca804e6b3400ff7bd56ed7f1ec107dde981"
+  integrity sha1-BLuMqATms0AP971W7X8ewQfd6YE=
   dependencies:
     "@babel/runtime" "^7.12.13"
     "@types/node-fetch" "^2.5.8"
     node-fetch "^2.6.1"
 
-"@polkadot/x-randomvalues@5.6.2":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/x-randomvalues/download/@polkadot/x-randomvalues-5.6.2.tgz#2a7092811992b95a0090332681d986d2e6996f85"
-  integrity sha1-KnCSgRmSuVoAkDMmgdmG0uaZb4U=
+"@polkadot/x-randomvalues@5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/x-randomvalues/download/@polkadot/x-randomvalues-5.7.1.tgz#5fe2b1868614d2b6e60712b69fbf985de2ab6bee"
+  integrity sha1-X+KxhoYU0rbmBxK2n7+YXeKra+4=
   dependencies:
     "@babel/runtime" "^7.12.13"
-    "@polkadot/x-global" "5.6.2"
+    "@polkadot/x-global" "5.7.1"
 
-"@polkadot/x-rxjs@^5.6.1":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/x-rxjs/download/@polkadot/x-rxjs-5.6.2.tgz#8a1770af2cf7abb9bcc4f4173f4f4a3e1c694130"
-  integrity sha1-ihdwryz3q7m8xPQXP09KPhxpQTA=
+"@polkadot/x-rxjs@^5.6.1", "@polkadot/x-rxjs@^5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/x-rxjs/download/@polkadot/x-rxjs-5.7.1.tgz#e5bf6de5620cc2fe55820742ce4e4067daa032da"
+  integrity sha1-5b9t5WIMwv5VggdCzk5AZ9qgMto=
   dependencies:
     "@babel/runtime" "^7.12.13"
     rxjs "^6.6.3"
 
-"@polkadot/x-textdecoder@5.6.2":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/x-textdecoder/download/@polkadot/x-textdecoder-5.6.2.tgz#64ce45f9e2ced992785ac909da16d7db759630aa"
-  integrity sha1-ZM5F+eLO2ZJ4WskJ2hbX23WWMKo=
+"@polkadot/x-textdecoder@5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/x-textdecoder/download/@polkadot/x-textdecoder-5.7.1.tgz#04b464e72416d5417f4ddb36b32e62689beac5b8"
+  integrity sha1-BLRk5yQW1UF/Tds2sy5iaJvqxbg=
   dependencies:
     "@babel/runtime" "^7.12.13"
-    "@polkadot/x-global" "5.6.2"
+    "@polkadot/x-global" "5.7.1"
 
-"@polkadot/x-textencoder@5.6.2":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/x-textencoder/download/@polkadot/x-textencoder-5.6.2.tgz#71b4f94aedd17e1ef64e1cf2d5fc6f148b02e06a"
-  integrity sha1-cbT5Su3Rfh72Thzy1fxvFIsC4Go=
+"@polkadot/x-textencoder@5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/x-textencoder/download/@polkadot/x-textencoder-5.7.1.tgz#721bb6a6761ca2d425f2f137d9cddd6d1d2f834e"
+  integrity sha1-chu2pnYcotQl8vE32c3dbR0vg04=
   dependencies:
     "@babel/runtime" "^7.12.13"
-    "@polkadot/x-global" "5.6.2"
+    "@polkadot/x-global" "5.7.1"
 
-"@polkadot/x-ws@^5.6.1":
-  version "5.6.2"
-  resolved "https://r.cnpmjs.org/@polkadot/x-ws/download/@polkadot/x-ws-5.6.2.tgz#18620e71c41eb6b69992a46916bea3283ac7e33f"
-  integrity sha1-GGIOccQetraZkqRpFr6jKDrH4z8=
+"@polkadot/x-ws@^5.7.1":
+  version "5.7.1"
+  resolved "https://registry.npm.taobao.org/@polkadot/x-ws/download/@polkadot/x-ws-5.7.1.tgz#fda475a38a5852249e6175122f8dd364d36fa5a7"
+  integrity sha1-/aR1o4pYUiSeYXUSL43TZNNvpac=
   dependencies:
     "@babel/runtime" "^7.12.13"
-    "@polkadot/x-global" "5.6.2"
+    "@polkadot/x-global" "5.7.1"
     "@types/websocket" "^1.0.1"
     websocket "^1.0.33"
 
@@ -364,28 +357,28 @@
 
 "@types/node-fetch@^2.5.8":
   version "2.5.8"
-  resolved "https://r.cnpmjs.org/@types/node-fetch/download/@types/node-fetch-2.5.8.tgz#e199c835d234c7eb0846f6618012e558544ee2fb"
+  resolved "https://registry.npm.taobao.org/@types/node-fetch/download/@types/node-fetch-2.5.8.tgz#e199c835d234c7eb0846f6618012e558544ee2fb"
   integrity sha1-4ZnINdI0x+sIRvZhgBLlWFRO4vs=
   dependencies:
     "@types/node" "*"
     form-data "^3.0.0"
 
 "@types/node@*":
-  version "14.14.19"
-  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-14.14.19.tgz?cache=0&sync_timestamp=1609522000804&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-14.14.19.tgz#5135176a8330b88ece4e9ab1fdcfc0a545b4bab4"
-  integrity sha1-UTUXaoMwuI7OTpqx/c/ApUW0urQ=
+  version "14.14.31"
+  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-14.14.31.tgz?cache=0&sync_timestamp=1613758023673&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
+  integrity sha1-cihr0z0TeqDRUtR+x8F2JWPTQFU=
 
 "@types/websocket@^1.0.1":
   version "1.0.1"
-  resolved "https://registry.npm.taobao.org/@types/websocket/download/@types/websocket-1.0.1.tgz?cache=0&sync_timestamp=1605060929773&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fwebsocket%2Fdownload%2F%40types%2Fwebsocket-1.0.1.tgz#039272c196c2c0e4868a0d8a1a27bbb86e9e9138"
+  resolved "https://registry.npm.taobao.org/@types/websocket/download/@types/websocket-1.0.1.tgz#039272c196c2c0e4868a0d8a1a27bbb86e9e9138"
   integrity sha1-A5JywZbCwOSGig2KGie7uG6ekTg=
   dependencies:
     "@types/node" "*"
 
-"@zondax/ledger-polkadot@^0.13.0":
-  version "0.13.0"
-  resolved "https://r.cnpmjs.org/@zondax/ledger-polkadot/download/@zondax/ledger-polkadot-0.13.0.tgz#13564cc0296298f03019b1385757146847d4ed72"
-  integrity sha1-E1ZMwClimPAwGbE4V1cUaEfU7XI=
+"@zondax/ledger-polkadot@^0.13.1":
+  version "0.13.4"
+  resolved "https://registry.npm.taobao.org/@zondax/ledger-polkadot/download/@zondax/ledger-polkadot-0.13.4.tgz#651341c6526e05d078393a574a103b7eaf8ad631"
+  integrity sha1-ZRNBxlJuBdB4OTpXShA7fq+K1jE=
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@ledgerhq/hw-transport" "^5.38.0"
@@ -438,9 +431,9 @@ bindings@^1.3.0, bindings@^1.5.0:
     file-uri-to-path "1.0.0"
 
 bl@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.npm.taobao.org/bl/download/bl-4.0.3.tgz?cache=0&sync_timestamp=1599194409829&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fbl%2Fdownload%2Fbl-4.0.3.tgz#12d6287adc29080e22a705e5764b2a9522cdc489"
-  integrity sha1-EtYoetwpCA4ipwXldksqlSLNxIk=
+  version "4.1.0"
+  resolved "https://registry.npm.taobao.org/bl/download/bl-4.1.0.tgz?cache=0&sync_timestamp=1612868036685&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fbl%2Fdownload%2Fbl-4.1.0.tgz#451535264182bec2fbbc83a62ab98cf11d9f7b3a"
+  integrity sha1-RRU1JkGCvsL7vIOmKrmM8R2fezo=
   dependencies:
     buffer "^5.5.0"
     inherits "^2.0.4"
@@ -458,7 +451,7 @@ bn.js@^4.11.9:
 
 brorand@^1.1.0:
   version "1.1.0"
-  resolved "https://r.cnpmjs.org/brorand/download/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
+  resolved "https://registry.npm.taobao.org/brorand/download/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
   integrity sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8=
 
 buffer@^5.5.0:
@@ -496,7 +489,7 @@ cipher-base@^1.0.1:
 
 code-point-at@^1.0.0:
   version "1.1.0"
-  resolved "https://registry.npm.taobao.org/code-point-at/download/code-point-at-1.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcode-point-at%2Fdownload%2Fcode-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
+  resolved "https://registry.npm.taobao.org/code-point-at/download/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
 combined-stream@^1.0.8:
@@ -576,7 +569,7 @@ detect-libc@^1.0.3:
 
 elliptic@^6.5.4:
   version "6.5.4"
-  resolved "https://r.cnpmjs.org/elliptic/download/elliptic-6.5.4.tgz#da37cebd31e79a1367e941b592ed1fbebd58abbb"
+  resolved "https://registry.npm.taobao.org/elliptic/download/elliptic-6.5.4.tgz?cache=0&sync_timestamp=1612290557689&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Felliptic%2Fdownload%2Felliptic-6.5.4.tgz#da37cebd31e79a1367e941b592ed1fbebd58abbb"
   integrity sha1-2jfOvTHnmhNn6UG1ku0fvr1Yq7s=
   dependencies:
     bn.js "^4.11.9"
@@ -653,9 +646,9 @@ file-uri-to-path@1.0.0:
   integrity sha1-VTp7hEb/b2hDWcRF8eN6BdrMM90=
 
 form-data@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/form-data/download/form-data-3.0.0.tgz#31b7e39c85f1355b7139ee0c647cf0de7f83c682"
-  integrity sha1-MbfjnIXxNVtxOe4MZHzw3n+DxoI=
+  version "3.0.1"
+  resolved "https://registry.npm.taobao.org/form-data/download/form-data-3.0.1.tgz?cache=0&sync_timestamp=1613411079128&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fform-data%2Fdownload%2Fform-data-3.0.1.tgz#ebd53791b78356a99af9a300d4282c4d5eb9755f"
+  integrity sha1-69U3kbeDVqma+aMA1CgsTV65dV8=
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
@@ -709,7 +702,7 @@ hash.js@^1.0.0, hash.js@^1.0.3, hash.js@^1.1.7:
 
 hmac-drbg@^1.0.1:
   version "1.0.1"
-  resolved "https://r.cnpmjs.org/hmac-drbg/download/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
+  resolved "https://registry.npm.taobao.org/hmac-drbg/download/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
   integrity sha1-0nRXAQJabHdabFRXk+1QL8DGSaE=
   dependencies:
     hash.js "^1.0.3"
@@ -733,7 +726,7 @@ ini@~1.3.0:
 
 ip-regex@^4.3.0:
   version "4.3.0"
-  resolved "https://r.cnpmjs.org/ip-regex/download/ip-regex-4.3.0.tgz#687275ab0f57fa76978ff8f4dddc8a23d5990db5"
+  resolved "https://registry.npm.taobao.org/ip-regex/download/ip-regex-4.3.0.tgz?cache=0&sync_timestamp=1611327086114&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fip-regex%2Fdownload%2Fip-regex-4.3.0.tgz#687275ab0f57fa76978ff8f4dddc8a23d5990db5"
   integrity sha1-aHJ1qw9X+naXj/j03dyKI9WZDbU=
 
 is-fullwidth-code-point@^1.0.0:
@@ -764,13 +757,13 @@ js-sha3@^0.8.0:
   integrity sha1-ubel2nOvrX3t0PjEY5VMveaBiEA=
 
 lodash@^4.17.20:
-  version "4.17.20"
-  resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.20.tgz?cache=0&sync_timestamp=1597336224062&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash%2Fdownload%2Flodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
-  integrity sha1-tEqbYpe8tpjxxRo1RaKzs2jVnFI=
+  version "4.17.21"
+  resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=
 
 lru-cache@^6.0.0:
   version "6.0.0"
-  resolved "https://r.cnpmjs.org/lru-cache/download/lru-cache-6.0.0.tgz#6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94"
+  resolved "https://registry.npm.taobao.org/lru-cache/download/lru-cache-6.0.0.tgz?cache=0&sync_timestamp=1594427606170&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flru-cache%2Fdownload%2Flru-cache-6.0.0.tgz#6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94"
   integrity sha1-bW/mVw69lqr5D8rR2vo7JWbbOpQ=
   dependencies:
     yallist "^4.0.0"
@@ -784,17 +777,17 @@ md5.js@^1.3.4:
     inherits "^2.0.1"
     safe-buffer "^5.1.2"
 
-mime-db@1.45.0:
-  version "1.45.0"
-  resolved "https://registry.npm.taobao.org/mime-db/download/mime-db-1.45.0.tgz?cache=0&sync_timestamp=1600831223231&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmime-db%2Fdownload%2Fmime-db-1.45.0.tgz#cceeda21ccd7c3a745eba2decd55d4b73e7879ea"
-  integrity sha1-zO7aIczXw6dF66LezVXUtz54eeo=
+mime-db@1.46.0:
+  version "1.46.0"
+  resolved "https://registry.npm.taobao.org/mime-db/download/mime-db-1.46.0.tgz#6267748a7f799594de3cbc8cde91def349661cee"
+  integrity sha1-Ymd0in95lZTePLyM3pHe80lmHO4=
 
 mime-types@^2.1.12:
-  version "2.1.28"
-  resolved "https://registry.npm.taobao.org/mime-types/download/mime-types-2.1.28.tgz?cache=0&sync_timestamp=1609562382117&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmime-types%2Fdownload%2Fmime-types-2.1.28.tgz#1160c4757eab2c5363888e005273ecf79d2a0ecd"
-  integrity sha1-EWDEdX6rLFNjiI4AUnPs950qDs0=
+  version "2.1.29"
+  resolved "https://registry.npm.taobao.org/mime-types/download/mime-types-2.1.29.tgz?cache=0&sync_timestamp=1613608491741&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmime-types%2Fdownload%2Fmime-types-2.1.29.tgz#1d4ab77da64b91f5f72489df29236563754bb1b2"
+  integrity sha1-HUq3faZLkfX3JInfKSNlY3VLsbI=
   dependencies:
-    mime-db "1.45.0"
+    mime-db "1.46.0"
 
 mimic-response@^2.0.0:
   version "2.1.0"
@@ -833,7 +826,7 @@ ms@2.0.0:
 
 nan@^2.13.2:
   version "2.14.2"
-  resolved "https://registry.npm.taobao.org/nan/download/nan-2.14.2.tgz?cache=0&sync_timestamp=1602591592175&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnan%2Fdownload%2Fnan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
+  resolved "https://registry.npm.taobao.org/nan/download/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha1-9TdkAGlRaPTMaUrJOT0MlYXu6hk=
 
 napi-build-utils@^1.0.1:
@@ -855,7 +848,7 @@ node-abi@^2.7.0:
 
 node-addon-api@^3.0.2:
   version "3.1.0"
-  resolved "https://registry.npm.taobao.org/node-addon-api/download/node-addon-api-3.1.0.tgz?cache=0&sync_timestamp=1608166338600&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-addon-api%2Fdownload%2Fnode-addon-api-3.1.0.tgz#98b21931557466c6729e51cb77cd39c965f42239"
+  resolved "https://registry.npm.taobao.org/node-addon-api/download/node-addon-api-3.1.0.tgz#98b21931557466c6729e51cb77cd39c965f42239"
   integrity sha1-mLIZMVV0ZsZynlHLd805yWX0Ijk=
 
 node-fetch@^2.6.1:
@@ -931,9 +924,9 @@ prebuild-install@^5.3.5:
     which-pm-runs "^1.0.0"
 
 prebuild-install@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npm.taobao.org/prebuild-install/download/prebuild-install-6.0.0.tgz#669022bcde57c710a869e39c5ca6bf9cd207f316"
-  integrity sha1-ZpAivN5XxxCoaeOcXKa/nNIH8xY=
+  version "6.0.1"
+  resolved "https://registry.npm.taobao.org/prebuild-install/download/prebuild-install-6.0.1.tgz#5902172f7a40eb67305b96c2a695db32636ee26d"
+  integrity sha1-WQIXL3pA62cwW5bCppXbMmNu4m0=
   dependencies:
     detect-libc "^1.0.3"
     expand-template "^2.0.3"
@@ -958,7 +951,7 @@ process-nextick-args@~2.0.0:
 
 pump@^3.0.0:
   version "3.0.0"
-  resolved "https://registry.npm.taobao.org/pump/download/pump-3.0.0.tgz#b4a2116815bde2f4e1ea602354e8c75565107a64"
+  resolved "https://registry.npm.taobao.org/pump/download/pump-3.0.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpump%2Fdownload%2Fpump-3.0.0.tgz#b4a2116815bde2f4e1ea602354e8c75565107a64"
   integrity sha1-tKIRaBW94vTh6mAjVOjHVWUQemQ=
   dependencies:
     end-of-stream "^1.1.0"
@@ -1011,7 +1004,7 @@ ripemd160@^2.0.1:
 
 rxjs@^6.6.3:
   version "6.6.3"
-  resolved "https://registry.npm.taobao.org/rxjs/download/rxjs-6.6.3.tgz?cache=0&sync_timestamp=1607305722903&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frxjs%2Fdownload%2Frxjs-6.6.3.tgz#8ca84635c4daa900c0d3967a6ee7ac60271ee552"
+  resolved "https://registry.npm.taobao.org/rxjs/download/rxjs-6.6.3.tgz?cache=0&sync_timestamp=1610927630960&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frxjs%2Fdownload%2Frxjs-6.6.3.tgz#8ca84635c4daa900c0d3967a6ee7ac60271ee552"
   integrity sha1-jKhGNcTaqQDA05Z6buesYCce5VI=
   dependencies:
     tslib "^1.9.0"
@@ -1038,7 +1031,7 @@ semver@^5.4.1:
 
 semver@^7.3.4:
   version "7.3.4"
-  resolved "https://r.cnpmjs.org/semver/download/semver-7.3.4.tgz#27aaa7d2e4ca76452f98d3add093a72c943edc97"
+  resolved "https://registry.npm.taobao.org/semver/download/semver-7.3.4.tgz?cache=0&sync_timestamp=1606853729284&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsemver%2Fdownload%2Fsemver-7.3.4.tgz#27aaa7d2e4ca76452f98d3add093a72c943edc97"
   integrity sha1-J6qn0uTKdkUvmNOt0JOnLJQ+3Jc=
   dependencies:
     lru-cache "^6.0.0"
@@ -1058,7 +1051,7 @@ sha.js@^2.4.0:
 
 signal-exit@^3.0.0:
   version "3.0.3"
-  resolved "https://registry.npm.taobao.org/signal-exit/download/signal-exit-3.0.3.tgz?cache=0&sync_timestamp=1585253323149&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsignal-exit%2Fdownload%2Fsignal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
+  resolved "https://registry.npm.taobao.org/signal-exit/download/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha1-oUEMLt2PB3sItOJTyOrPyvBXRhw=
 
 simple-concat@^1.0.0:
@@ -1153,7 +1146,7 @@ tar-stream@^2.1.4:
 
 tslib@^1.9.0:
   version "1.14.1"
-  resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.14.1.tgz?cache=0&sync_timestamp=1602286826065&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
+  resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.14.1.tgz?cache=0&sync_timestamp=1609887446200&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
 
 tunnel-agent@^0.6.0:
@@ -1170,13 +1163,13 @@ tweetnacl@^1.0.3:
 
 type@^1.0.1:
   version "1.2.0"
-  resolved "https://registry.npm.taobao.org/type/download/type-1.2.0.tgz?cache=0&sync_timestamp=1598016882690&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftype%2Fdownload%2Ftype-1.2.0.tgz#848dd7698dafa3e54a6c479e759c4bc3f18847a0"
+  resolved "https://registry.npm.taobao.org/type/download/type-1.2.0.tgz#848dd7698dafa3e54a6c479e759c4bc3f18847a0"
   integrity sha1-hI3XaY2vo+VKbEeedZxLw/GIR6A=
 
 type@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.npm.taobao.org/type/download/type-2.1.0.tgz?cache=0&sync_timestamp=1598016882690&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftype%2Fdownload%2Ftype-2.1.0.tgz#9bdc22c648cf8cf86dd23d32336a41cfb6475e3f"
-  integrity sha1-m9wixkjPjPht0j0yM2pBz7ZHXj8=
+  version "2.3.0"
+  resolved "https://registry.npm.taobao.org/type/download/type-2.3.0.tgz#ada7c045f07ead08abf9e2edd29be1a0c0661132"
+  integrity sha1-rafARfB+rQir+eLt0pvhoMBmETI=
 
 typedarray-to-buffer@^3.1.5:
   version "3.1.5"
@@ -1250,5 +1243,5 @@ yaeti@^0.0.6:
 
 yallist@^4.0.0:
   version "4.0.0"
-  resolved "https://r.cnpmjs.org/yallist/download/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
+  resolved "https://registry.npm.taobao.org/yallist/download/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
   integrity sha1-m7knkNnA7/7GO+c1GeEaNQGaOnI=

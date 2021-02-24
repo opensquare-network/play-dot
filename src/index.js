@@ -1,6 +1,6 @@
 const { ApiPromise, WsProvider } = require("@polkadot/api");
 const { keyring, cryptoWaitReady } = require("@polkadot/ui-keyring");
-const { GenericCall } = require("@polkadot/types");
+const { GenericCall, UInt, Percent, Permill } = require("@polkadot/types");
 
 let provider = null;
 let api = null;
@@ -19,13 +19,33 @@ async function getApi() {
 
 async function main() {
   const api = await getApi();
+
+  await getTippersCount(api);
+
   // await readTip(api)
   // await metadata(api)
   // await testMultisig();
 
   // await testRawCall(api)
   // await testBatch(api)
-  await getBounty(api)
+  // await getBounty(api)
+  // const p = new UInt(0xd0070000);
+  //
+  // console.log(p)
+  // console.log(Permill);
+  // await testQueryConst(api)
+}
+
+async function testQueryConst(api) {
+  console.log(api);
+  const registry = await api.getBlockRegistry('0x954eabfbfba5e8f9d9dd1475b123968c3be73e58ecbb58fc4f88f8ba475f2a2b');
+  const Type = api.registry.get('Permill');
+  const v = registry.metadata.get('metadata')['asV12'].get('modules')[20].get('constants')[3].get('value');
+
+
+  const aaa = new Type(registry, v).toHuman();
+
+  return api.consts.treasury.burn.toHuman();
 }
 
 async function testBatch(api) {
@@ -89,6 +109,18 @@ async function getBounty(api) {
   const meta = await api.query.bounties.bounties.at(blockHash, 2);
 
   console.log(meta)
+}
+
+async function getTippersCount(api) {
+  const blockHash = '0x7cffec4ac944ba0e88b93348f369ebca6d24a7851bec7b7f25edc6c33fe70148';
+
+  await api.consts
+  const members = await api.query.electionsPhragmen.members.at(blockHash);
+  const Type = api.query.electionsPhragmen.members.meta.type;
+
+  const t = new Type(members);
+  console.log(t);
+  return members.length;
 }
 
 main().catch(console.error);
