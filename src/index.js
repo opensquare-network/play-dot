@@ -44,7 +44,7 @@ async function main() {
 const TreasuryAccount = "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29";
 
 async function querySystemAccount() {
-  const blockHash = await api.rpc.chain.getBlockHash(1375086);
+  const blockHash = await api.rpc.chain.getBlockHash(1382400);
   const a1 = await api.query.system.account.at(blockHash, TreasuryAccount);
   console.log(a1.toJSON())
 }
@@ -60,40 +60,24 @@ async function qBalance(api) {
   console.log(metadata.registry.createType('Compact<Balance>', value).toJSON());
 }
 
-async function queryBalance(api) {
+async function getOldKey(api) {
   const blockHash = await api.rpc.chain.getBlockHash(1375085);
 
   const metadata = await api.rpc.state.getMetadata(blockHash);
   const decorated = expandMetadata(metadata.registry, metadata);
 
-  const key = compactStripLength(decorated.query.balances.freeBalance(TreasuryAccount));
+  return [decorated.query.balances.freeBalance, TreasuryAccount]
+}
+async function queryBalance(api) {
+  const blockHash = await api.rpc.chain.getBlockHash(1377831);
+  const metadata = await api.rpc.state.getMetadata(blockHash);
 
-  // const value = await api.rpc.state.getStorage(key, blockHash);
+  // const decorated = expandMetadata(metadata.registry, metadata);
+  // const k = [decorated.query.balances.account, TreasuryAccount];
 
+  const key = await getOldKey(api);
   const value = await api.rpc.state.getStorage(key, blockHash);
-
   console.log(metadata.registry.createType('Compact<Balance>', value).toJSON());
-
-  // const totalIssuanceValue = await api.rpc.state.getStorage([decorated.query.balances.totalIssuance], blockHash);
-  // console.log(metadata.registry.createType('Compact<Balance>', totalIssuanceValue).toString());
-
-  // const key = u8aToHex(decorated.query.balances.freeBalance(TreasuryAccount));
-  // const value = await api.rpc.state.getStorage(key, blockHash);
-  //
-  // console.log(metadata.registry.createType('Compact<Balance>', value).toHuman());
-  //
-  // const totalIssuanceKey = u8aToHex(decorated.query.balances.totalIssuance());
-  // const totalIssuanceValue = await api.rpc.state.getStorage(key, blockHash);
-  //
-
-  // const registry = await api.getBlockRegistry(blockHash);
-  // const metadata = registry.metadata;
-  //
-  // const a1 = await api.query.system.account.at(blockHash, TreasuryAccount);
-  // const a2 = await api.query.balances.account.at(blockHash, TreasuryAccount);
-  //
-  // console.log('a1', a1.toJSON());
-  // console.log('a2', a2.toJSON());
 }
 
 async function testQueryConst(api) {
