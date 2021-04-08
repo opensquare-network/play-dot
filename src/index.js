@@ -8,11 +8,11 @@ let provider = null;
 let api = null;
 
 const defaultKsmEndPoint = "wss://kusama.elara.patract.io/";
+const dotEndPoint = "wss://polkadot.elara.patract.io/";
 
 async function getApi() {
   if (!api) {
-    const ws_endpoint = process.env.WS_ENDPOINT || defaultKsmEndPoint;
-    provider = new WsProvider(ws_endpoint);
+    provider = new WsProvider(dotEndPoint);
     api = await ApiPromise.create({ provider });
   }
 
@@ -24,7 +24,8 @@ async function main() {
 
   // await querySystemAccount(api);
   // await qBalance(api);
-  await queryBalance(api);
+  await querySystemAccount()
+  // await queryBalance(api);
   // await getTippersCount(api);
 
   // await readTip(api)
@@ -42,9 +43,10 @@ async function main() {
 }
 
 const TreasuryAccount = "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29";
+const dotTreasuryAccount = "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB";
 
 async function querySystemAccount() {
-  const blockHash = await api.rpc.chain.getBlockHash(1382400);
+  const blockHash = await api.rpc.chain.getBlockHash(328745);
   const a1 = await api.query.system.account.at(blockHash, TreasuryAccount);
   console.log(a1.toJSON())
 }
