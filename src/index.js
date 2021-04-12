@@ -22,9 +22,11 @@ async function getApi() {
 async function main() {
   const api = await getApi();
 
+  await testNewTipsModule(api)
+
   // await querySystemAccount(api);
   // await qBalance(api);
-  await querySystemAccount()
+  // await querySystemAccount()
   // await queryBalance(api);
   // await getTippersCount(api);
 
@@ -80,6 +82,16 @@ async function queryBalance(api) {
   const key = await getOldKey(api);
   const value = await api.rpc.state.getStorage(key, blockHash);
   console.log(metadata.registry.createType('Compact<Balance>', value).toJSON());
+}
+
+async function testNewTipsModule(api) {
+  const blockHash = await api.rpc.chain.getBlockHash(3899547);
+  const metadata = await api.rpc.state.getMetadata(blockHash);
+
+  const modules = metadata.toJSON().metadata.V12.modules
+  const hasTips = !!modules.find(module => module.name === 'Tips')
+
+  console.log('hasModules', !!modules, 'hasTips', hasTips)
 }
 
 async function testQueryConst(api) {
