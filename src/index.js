@@ -22,7 +22,8 @@ async function getApi() {
 async function main() {
   const api = await getApi();
 
-  await testNewTipsModule(api)
+  await queryProperties()
+  // await testNewTipsModule(api)
 
   // await querySystemAccount(api);
   // await qBalance(api);
@@ -46,6 +47,11 @@ async function main() {
 
 const TreasuryAccount = "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29";
 const dotTreasuryAccount = "13UVJyLnbVp9RBZYFwFGyDvVd1y27Tt8tkntv6Q7JVPhFsTB";
+
+async function queryProperties() {
+  const properties = await api.rpc.system.properties()
+  console.log(properties)
+}
 
 async function querySystemAccount() {
   const blockHash = await api.rpc.chain.getBlockHash(328745);
