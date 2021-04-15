@@ -21,8 +21,10 @@ async function getApi() {
 
 async function main() {
   const api = await getApi();
+  // await querySystemAccount()
+  await qBalance(api)
 
-  await queryProperties()
+  // await queryProperties()
   // await testNewTipsModule(api)
 
   // await querySystemAccount(api);
@@ -54,19 +56,21 @@ async function queryProperties() {
 }
 
 async function querySystemAccount() {
-  const blockHash = await api.rpc.chain.getBlockHash(328745);
-  const a1 = await api.query.system.account.at(blockHash, TreasuryAccount);
-  console.log(a1.toJSON())
+  const blockHash = await api.rpc.chain.getBlockHash(29231); // 38745
+  const a1 = await api.query.system.account.at(blockHash, dotTreasuryAccount);
+  const free = a1.data.free.toHuman()
+  console.log('treasury free:', free)
+  // console.log(a1.toJSON())
 }
 
 async function qBalance(api) {
   // 1492896
-  const blockHash = await api.rpc.chain.getBlockHash(1492895);
+  const blockHash = await api.rpc.chain.getBlockHash(29230);
 
   const metadata = await api.rpc.state.getMetadata(blockHash);
   const decorated = expandMetadata(metadata.registry, metadata);
 
-  const value = await api.rpc.state.getStorage([decorated.query.balances.freeBalance, TreasuryAccount], blockHash);
+  const value = await api.rpc.state.getStorage([decorated.query.balances.freeBalance, dotTreasuryAccount], blockHash);
   console.log(metadata.registry.createType('Compact<Balance>', value).toJSON());
 }
 
