@@ -22,7 +22,8 @@ async function getApi() {
 async function main() {
   const api = await getApi();
   // await querySystemAccount()
-  await qBalance(api)
+  // await qBalance(api)
+  await querySystemAccount()
 
   // await queryProperties()
   // await testNewTipsModule(api)
@@ -56,7 +57,7 @@ async function queryProperties() {
 }
 
 async function querySystemAccount() {
-  const blockHash = await api.rpc.chain.getBlockHash(29231); // 38745
+  const blockHash = await api.rpc.chain.getBlockHash(4914364); // 38745
   const a1 = await api.query.system.account.at(blockHash, dotTreasuryAccount);
   const free = a1.data.free.toHuman()
   console.log('treasury free:', free)
