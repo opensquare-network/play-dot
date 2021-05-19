@@ -12,7 +12,7 @@ const dotEndPoint = "wss://polkadot.elara.patract.io/";
 
 async function getApi() {
   if (!api) {
-    provider = new WsProvider(dotEndPoint);
+    provider = new WsProvider(defaultKsmEndPoint);
     api = await ApiPromise.create({ provider });
   }
 
@@ -23,7 +23,8 @@ async function main() {
   const api = await getApi();
   // await querySystemAccount()
   // await qBalance(api)
-  await querySystemAccount()
+  // await querySystemAccount()
+  await queryConst()
 
   // await queryProperties()
   // await testNewTipsModule(api)
@@ -103,6 +104,14 @@ async function testNewTipsModule(api) {
   const hasTips = !!modules.find(module => module.name === 'Tips')
 
   console.log('hasModules', !!modules, 'hasTips', hasTips)
+}
+
+async function queryConst() {
+  const hash = '0xf776d7a3f0c4c83e0559e9ea09e8e4b9edc1c32b1d7b7aef870812be1f20dc41'
+  const registry = await api.getBlockRegistry(hash);
+  const metadata = registry.metadata.get("metadata");
+
+  console.log(metadata)
 }
 
 async function testQueryConst(api) {
