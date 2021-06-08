@@ -9,10 +9,11 @@ let api = null;
 
 const defaultKsmEndPoint = "wss://kusama.elara.patract.io/";
 const dotEndPoint = "wss://polkadot.elara.patract.io/";
+// const dotEndPoint = "wss://polkadot.api.onfinality.io/public-ws";
 
 async function getApi() {
   if (!api) {
-    provider = new WsProvider(defaultKsmEndPoint);
+    provider = new WsProvider(dotEndPoint);
     api = await ApiPromise.create({ provider });
   }
 
@@ -24,7 +25,7 @@ async function main() {
   // await querySystemAccount()
   // await qBalance(api)
   // await querySystemAccount()
-  await queryConst()
+  // await queryConst()
 
   // await queryProperties()
   // await testNewTipsModule(api)
@@ -41,7 +42,7 @@ async function main() {
 
   // await testRawCall(api)
   // await testBatch(api)
-  // await getBounty(api)
+  await getBounty(api)
   // const p = new UInt(0xd0070000);
   //
   // console.log(p)
@@ -58,7 +59,7 @@ async function queryProperties() {
 }
 
 async function querySystemAccount() {
-  const blockHash = await api.rpc.chain.getBlockHash(4914364); // 38745
+  const blockHash = await api.rpc.chain.getBlockHash(29230); // 38745
   const a1 = await api.query.system.account.at(blockHash, dotTreasuryAccount);
   const free = a1.data.free.toHuman()
   console.log('treasury free:', free)
@@ -183,10 +184,10 @@ async function getVoting(api) {
 }
 
 async function getBounty(api) {
-  const blockHash = await api.rpc.chain.getBlockHash(6161169);
-  const meta = await api.query.bounties.bounties.at(blockHash, 2);
+  const blockHash = await api.rpc.chain.getBlockHash(3206823);
+  const meta = await api.query.bounties.bounties.at(blockHash, 0);
 
-  console.log(meta)
+  console.log(meta.toJSON())
 }
 
 async function getTippersCount(api) {
