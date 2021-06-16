@@ -3,6 +3,7 @@ const { ApiPromise, WsProvider } = require("@polkadot/api");
 let provider = null;
 let api = null;
 
+// const dotEndPoint = "wss://polkadot.api.onfinality.io/public-ws";
 const dotEndPoint = "wss://polkadot.elara.patract.io/";
 
 async function getApi() {
@@ -17,7 +18,18 @@ async function getApi() {
 async function main() {
   await getApi();
 
-  await getMetadata();
+  await getBlock()
+  // await getMetadata();
+}
+
+async function getBlock() {
+  const blockHash = await api.rpc.chain.getBlockHash(29232);
+  const block = await api.rpc.chain.getBlock(blockHash);
+
+  const allEvents = await api.query.system.events.at(blockHash);
+
+  console.log(allEvents);
+  console.log(block.toHex())
 }
 
 async function getMetadata() {
