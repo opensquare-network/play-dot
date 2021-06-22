@@ -6,6 +6,8 @@ const pinata = pinataSDK(process.env.PINATA_API_KEY, process.env.PINATA_SECRET_K
 async function main() {
   const result = await pinata.pinJSONToIPFS({
     hello: 'world'
+  }, {
+    name: "abc"
   });
   console.log(result)
 
