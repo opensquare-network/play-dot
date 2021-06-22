@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@pinata/sdk": "^1.1.23",
     "@polkadot/api": "^4.14.1",
     "@polkadot/types": "^4.14.1",
     "@polkadot/ui-keyring": "^0.80.1",
-    "@polkadot/util": "^6.8.1"
+    "@polkadot/util": "^6.8.1",
+    "dotenv": "^10.0.0"
   }
 }
