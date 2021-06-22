@@ -7,7 +7,7 @@ async function main() {
   const result = await pinata.pinJSONToIPFS({
     hello: 'world'
   }, {
-    name: "abc"
+    pinataMetadata: { name: "abc" }
   });
   console.log(result)
 
