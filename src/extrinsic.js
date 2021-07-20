@@ -20,15 +20,12 @@ async function getApi() {
 async function main() {
   const api = await getApi();
 
-  const blockHash = await api.rpc.chain.getBlockHash(5033194); // 38745
+  const blockHash = await api.rpc.chain.getBlockHash(6008455); // 38745
   const block = await api.rpc.chain.getBlock(blockHash);
 
   console.log(block)
-
-  const addr = new GenericMultiAddress(api)
 }
 
-const str = '0x00c8e61cb732b7e68f6954114544822dadc4bf1c90ffa486e9c44c5ba0eadfa016'
 
 
 
