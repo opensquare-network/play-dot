@@ -18,8 +18,8 @@ async function getApi() {
 async function main() {
   await getApi();
 
-  await getBlock()
-  // await getMetadata();
+  // await getBlock()
+  await getMetadata();
 }
 
 async function getBlock() {
@@ -34,7 +34,7 @@ async function getBlock() {
 
 async function getMetadata() {
   const blockHash = await api.rpc.chain.getBlockHash(29231);
-  const metadata = await api.rpc.state.getMetadata(blockHash);
+  const metadata = await api.rpc.state.getMetadata();
 
   console.log(metadata)
 }
