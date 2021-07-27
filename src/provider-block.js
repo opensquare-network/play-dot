@@ -14,18 +14,23 @@ async function getProvider() {
   return provider;
 }
 
-const eventsKey = '';
+const eventsKey = '0x26aa394eea5630e07c48ae0c9558cef780d41e5e16056765bc8461851072c9d7';
 
 async function main() {
   const provider = await getProvider()
+
   const blockHash = await provider.send('chain_getBlockHash', [15])
   console.log('blockHash', blockHash)
 
+  // const runtimeVersion = await provider.send('chain_getRuntimeVersion', [blockHash])
+  // console.log(runtimeVersion)
+  // console.log('specVersion', runtimeVersion.specVersion)
+
   const block = await provider.send('chain_getBlock', [blockHash])
   console.log('block', block)
-
-  const events = await provider.send('state_getStorageAt', [eventsKey, blockHash])
-  console.log('events', events)
+  //
+  // const events = await provider.send('state_getStorageAt', [eventsKey, blockHash])
+  // console.log('events', events)
 
   await provider.disconnect()
 }

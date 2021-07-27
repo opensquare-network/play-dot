@@ -26,9 +26,6 @@ async function main() {
   console.log(block)
 }
 
-
-
-
 main().catch(console.error).finally(() => {
   process.exit(0)
 });
