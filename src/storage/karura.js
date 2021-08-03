@@ -36,6 +36,12 @@ async function queryProposal() {
     console.log('\t', arg.name.toString());
   }
 
+  const tabledBlockHash = await api.rpc.chain.getBlockHash(144000);
+  const allEvents = await api.query.system.events.at(tabledBlockHash);
+  for (const event of allEvents) {
+    console.log(event)
+  }
+
   await provider.disconnect()
 }
 
