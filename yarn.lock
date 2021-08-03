@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@acala-network/type-definitions@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.nlark.com/@acala-network/type-definitions/download/@acala-network/type-definitions-2.0.1.tgz#14dd211ea3192acd826a0834b851bc6c149dd615"
+  integrity sha1-FN0hHqMZKs2Cagg0uFG8bBSd1hU=
+  dependencies:
+    "@open-web3/orml-type-definitions" "^0.9.4-19"
+
 "@babel/runtime@^7.14.6":
   version "7.14.6"
   resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.14.6.tgz#535203bc0892efc7dec60bdc27b2ecf6e409062d"
@@ -82,6 +89,13 @@
   version "6.2.0"
   resolved "https://registry.nlark.com/@ledgerhq/logs/download/@ledgerhq/logs-6.2.0.tgz#9fb2d6f1811316697f7b3cc14607f6c608912419"
   integrity sha1-n7LW8YETFml/ezzBRgf2xgiRJBk=
+
+"@open-web3/orml-type-definitions@^0.9.4-19":
+  version "0.9.4-20"
+  resolved "https://registry.nlark.com/@open-web3/orml-type-definitions/download/@open-web3/orml-type-definitions-0.9.4-20.tgz#453f56257da869243347efbf8d15ab38a9dd25a3"
+  integrity sha1-RT9WJX2oaSQzR++/jRWrOKndJaM=
+  dependencies:
+    lodash.merge "^4.6.2"
 
 "@pinata/sdk@^1.1.23":
   version "1.1.23"
@@ -451,9 +465,9 @@ bindings@^1.3.0, bindings@^1.5.0:
   dependencies:
     file-uri-to-path "1.0.0"
 
-"bip32-ed25519@git+https://github.com/Zondax/bip32-ed25519.git":
+"bip32-ed25519@https://github.com/Zondax/bip32-ed25519":
   version "0.0.4"
-  resolved "git+https://github.com/Zondax/bip32-ed25519.git#0949df01b5c93885339bc28116690292088f6134"
+  resolved "https://github.com/Zondax/bip32-ed25519#0949df01b5c93885339bc28116690292088f6134"
   dependencies:
     bn.js "^5.1.1"
     elliptic "^6.4.1"
@@ -905,6 +919,11 @@ js-sha3@^0.8.0:
   version "0.8.0"
   resolved "https://registry.npm.taobao.org/js-sha3/download/js-sha3-0.8.0.tgz#b9b7a5da73afad7dedd0f8c463954cbde6818840"
   integrity sha1-ubel2nOvrX3t0PjEY5VMveaBiEA=
+
+lodash.merge@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.npm.taobao.org/lodash.merge/download/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
+  integrity sha1-VYqlO0O2YeGSWgr9+japoQhf5Xo=
 
 lodash@^4.17.21:
   version "4.17.21"

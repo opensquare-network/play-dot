@@ -24,7 +24,7 @@ async function main() {
 }
 
 async function queryProposal() {
-  const blockHash = await api.rpc.chain.getBlockHash(37922);
+  const blockHash = await api.rpc.chain.getBlockHash(135713);
   const block = await api.rpc.chain.getBlock(blockHash);
   const props = await api.query.democracy.publicProps.at(blockHash);
 
