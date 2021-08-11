@@ -227,7 +227,7 @@
     "@polkadot/x-ws" "^7.1.1"
     eventemitter3 "^4.0.7"
 
-"@polkadot/types-known@5.4.1":
+"@polkadot/types-known@5.4.1", "@polkadot/types-known@^5.4.1":
   version "5.4.1"
   resolved "https://registry.nlark.com/@polkadot/types-known/download/@polkadot/types-known-5.4.1.tgz#4200f1c780876f1ee1a573c7cea017d12291ec32"
   integrity sha1-QgDxx4CHbx7hpXPHzqAX0SKR7DI=
@@ -492,9 +492,9 @@ bindings@^1.3.0, bindings@^1.5.0:
   dependencies:
     file-uri-to-path "1.0.0"
 
-"bip32-ed25519@git+https://github.com/Zondax/bip32-ed25519.git":
+"bip32-ed25519@https://github.com/Zondax/bip32-ed25519":
   version "0.0.4"
-  resolved "git+https://github.com/Zondax/bip32-ed25519.git#0949df01b5c93885339bc28116690292088f6134"
+  resolved "https://github.com/Zondax/bip32-ed25519#0949df01b5c93885339bc28116690292088f6134"
   dependencies:
     bn.js "^5.1.1"
     elliptic "^6.4.1"
