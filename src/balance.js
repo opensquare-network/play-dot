@@ -21,9 +21,9 @@ async function getApi() {
 async function main() {
   const api = await getApi();
   // const address = '5Dw5KnvTs96FaRQFez1Su15XMMJ65QAi4F1ugNBaXUBiGbX6'
-  const address = 'EY1js3mL4RDgNKse3y4gozpfLHSzRTeUcobn3DWVK23ZpTM'
+  const address = 'JEzV35EHd63B15xY2b8VgZK7E3vmdEJidxS2j31ywkbMqgk'
 
-  const preHeight = 78233
+  const preHeight = 106469
   const preBlockHash = await api.rpc.chain.getBlockHash(preHeight);
   const preAccount = await api.query.system.account.at(preBlockHash, address)
   console.log(preHeight, preAccount.data.toJSON())

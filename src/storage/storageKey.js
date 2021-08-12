@@ -28,11 +28,15 @@ function getAccountStorageKey(address) {
 async function main() {
   const addr1 = 'DMHW1yWZS4qingUwcJRjZSJ8SvbvMUEKZL1oMiwcUXHBGWA';
   const addr2 = 'ESgz7GLVW7BL5DhRgpVnxSXVwaKt4ytWcrf52TY1GQD1cEb';
+  const addr3 = 'JEzV35EHd63B15xY2b8VgZK7E3vmdEJidxS2j31ywkbMqgk'
 
-  const keys = [addr1, addr2].map(getAccountStorageKey)
+  const keys = [addr1, addr2, addr3].map(getAccountStorageKey)
   console.log(keys);
 
   await getApi();
+
+  const test = api.registry.createType('AccountInfo', null, true)
+  console.log(test)
   const height = 8749872;
   const blockHash = await api.rpc.chain.getBlockHash(height);
   console.log(blockHash.toString())
