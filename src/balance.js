@@ -10,7 +10,8 @@ let provider = null;
 let api = null;
 
 // const defaultKsmEndPoint = "wss://kusama.elara.patract.io/";
-const defaultKsmEndPoint = "wss://kusama.api.onfinality.io/public-ws";
+const defaultKsmEndPoint = "wss://kusama-rpc.polkadot.io";
+// const defaultKsmEndPoint = "wss://kusama.api.onfinality.io/public-ws";
 const dotEndPoint = "wss://polkadot.elara.patract.io/";
 const westmintEndPoint = "wss://westmint-rpc.polkadot.io/";
 // const statemineEndPoint = "wss://kusama-statemine-rpc.paritytech.net";
@@ -36,6 +37,15 @@ function getFreeBalanceAccountKey(address) {
   return u8aToHex([...section, ...method, ...hash,]);
 }
 
+function getSystemAccountBlake256(address) {
+  const section = xxhashAsU8a("System", 128);
+  const method = xxhashAsU8a("Account", 128);
+
+  const id = decodeAddress(address);
+  const hash = blake2AsU8a(id, 256);
+  return u8aToHex([...section, ...method, ...hash,]);
+}
+
 function getSystemAccountKey(address) {
   const section = xxhashAsU8a("System", 128);
   const method = xxhashAsU8a("Account", 128);
@@ -49,18 +59,33 @@ function getSystemAccountKey(address) {
 async function getTreasuryAccount() {
   const TreasuryAccount = "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29";
 
-  const height = 1468800
+  const height = 45458
+  // const height = 1445458
+  // const height = 1472960
+  // const height = 1475648
+  // const height = 1491596
+  // [1445458 - 1574408)
+
+  // 1491596 - 1574408
+  // const height = 1492896
+  // const height = 1492895
   const blockHash = await api.rpc.chain.getBlockHash(height);
   const metadata = await api.rpc.state.getMetadata(blockHash);
+
+  const system256Key = getSystemAccountBlake256(TreasuryAccount)
 
   const balancesKey = getFreeBalanceAccountKey(TreasuryAccount);
   const systemKey = getSystemAccountKey(TreasuryAccount);
 
   const balancesValue = await api.rpc.state.getStorage(balancesKey, blockHash);
   const systemValue = await api.rpc.state.getStorage(systemKey, blockHash);
+  const system256Value = await api.rpc.state.getStorage(system256Key, blockHash);
 
   console.log('balancesValue', balancesValue.toHex())
   console.log('systemValue', systemValue.toHex())
+  console.log('system256Value', system256Value.toHex())
+
+  await provider.disconnect()
 }
 
 async function main() {
