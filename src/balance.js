@@ -28,12 +28,12 @@ async function getApi() {
 
 function getFreeBalanceAccountKey(address) {
   const section = xxhashAsU8a("Balances", 128);
-  const method = xxhashAsU8a("freeBalance", 128);
+  const method = xxhashAsU8a("FreeBalance", 128);
 
   const id = decodeAddress(address);
-  const hash = blake2AsU8a(id, 128);
+  const hash = blake2AsU8a(id, 256);
 
-  return u8aToHex([...section, ...method, ...hash, ...id]);
+  return u8aToHex([...section, ...method, ...hash,]);
 }
 
 function getSystemAccountKey(address) {
@@ -49,8 +49,9 @@ function getSystemAccountKey(address) {
 async function getTreasuryAccount() {
   const TreasuryAccount = "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29";
 
-  const height = 1375085
+  const height = 1468800
   const blockHash = await api.rpc.chain.getBlockHash(height);
+  const metadata = await api.rpc.state.getMetadata(blockHash);
 
   const balancesKey = getFreeBalanceAccountKey(TreasuryAccount);
   const systemKey = getSystemAccountKey(TreasuryAccount);
@@ -58,8 +59,8 @@ async function getTreasuryAccount() {
   const balancesValue = await api.rpc.state.getStorage(balancesKey, blockHash);
   const systemValue = await api.rpc.state.getStorage(systemKey, blockHash);
 
-  console.log('balancesValue', balancesValue)
-  console.log('systemValue', systemValue)
+  console.log('balancesValue', balancesValue.toHex())
+  console.log('systemValue', systemValue.toHex())
 }
 
 async function main() {
