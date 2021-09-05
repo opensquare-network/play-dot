@@ -4,10 +4,11 @@ let provider = null;
 
 const dotEndPoint = "wss://polkadot.elara.patract.io/";
 const defaultKsmEndPoint = "wss://kusama.elara.patract.io/";
+const statemineEndPoint = "wss://kusama-statemine-rpc.paritytech.net";
 
 async function getProvider() {
   if (!provider) {
-    provider = new WsProvider(defaultKsmEndPoint);
+    provider = new WsProvider(statemineEndPoint);
     await provider.isReady
   }
 
