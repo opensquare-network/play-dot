@@ -6,9 +6,9 @@
   "dependencies": {
     "@acala-network/type-definitions": "^2.2.1",
     "@pinata/sdk": "^1.1.23",
-    "@polkadot/api": "^5.7.1",
-    "@polkadot/types": "^5.7.1",
-    "@polkadot/types-known": "^5.7.1",
+    "@polkadot/api": "^5.8.3",
+    "@polkadot/types": "^5.8.3",
+    "@polkadot/types-known": "^5.8.3",
     "@polkadot/ui-keyring": "^0.85.3",
     "@polkadot/util": "^7.3.1",
     "@polkadot/util-crypto": "^7.3.1",

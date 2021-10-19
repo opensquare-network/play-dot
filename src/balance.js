@@ -60,7 +60,7 @@ async function getTreasuryAccount() {
   const TreasuryAccount = "F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29";
 
   // const height = 45458
-  const height = 6000000
+  // const height = 6000000
   // const height = 1445458
   // const height = 1472960
   // const height = 1475648
@@ -68,7 +68,7 @@ async function getTreasuryAccount() {
   // [1445458 - 1574408)
 
   // 1491596 - 1574408
-  // const height = 1492896
+  const height = 1492896
   // const height = 1492895
   const blockHash = await api.rpc.chain.getBlockHash(height);
   const metadata = await api.rpc.state.getMetadata(blockHash);
@@ -76,7 +76,7 @@ async function getTreasuryAccount() {
   const system256Key = getSystemAccountBlake256(TreasuryAccount)
 
   const balancesKey = getFreeBalanceAccountKey(TreasuryAccount);
-  console.log('balancesKey', balancesKey)
+  // console.log('balancesKey', balancesKey)
   const systemKey = getSystemAccountKey(TreasuryAccount);
 
   const balancesValue = await api.rpc.state.getStorage(balancesKey, blockHash);
