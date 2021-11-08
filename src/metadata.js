@@ -4,7 +4,7 @@ let provider = null;
 let api = null;
 
 // const dotEndPoint = "wss://polkadot.api.onfinality.io/public-ws";
-const dotEndPoint = "wss://polkadot.elara.patract.io/";
+const dotEndPoint = "wss://pub.elara.patract.io/polkadot";
 
 async function getApi() {
   if (!api) {
