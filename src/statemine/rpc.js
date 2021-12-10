@@ -1,3 +1,5 @@
+
+
 const { ApiPromise, WsProvider } = require("@polkadot/api");
 let provider = null;
 let api = null;
@@ -18,9 +20,8 @@ async function getApi() {
 (async () => {
   await getApi();
 
-  api.rpc.chain.subscribeFinalizedHeads((header) => {
-    const height = header.number.toNumber();
-    console.log('finalized', height)
-  });
+  const hash = await api.rpc.chain.getFinalizedHead()
+  const head = await api.rpc.chain.getHeader(hash);
 
+  console.log(head)
 })()
