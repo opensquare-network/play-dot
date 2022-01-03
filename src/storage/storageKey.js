@@ -7,7 +7,7 @@ let api = null;
 const section = xxhashAsU8a('System', 128)
 const method = xxhashAsU8a('Account', 128)
 
-const defaultKsmEndPoint = "wss://kusama.elara.patract.io/";
+const defaultKsmEndPoint = "wss://pub.elara.patract.io/kusama";
 
 async function getApi() {
   if (!api) {
