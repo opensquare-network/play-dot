@@ -247,6 +247,13 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@bifrost-finance/type-definitions@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@bifrost-finance/type-definitions/-/type-definitions-1.4.0.tgz#421cabf1e2a8d75836ce56050fc92de279c2ff10"
+  integrity sha512-PLrqQHwwBUolMJEYDBEf90xDncxRVz31I7QLxTGwvI+T4/x8oh4FJ/XWLT2g1obnBbQB3e0KIxZFhQ4l4BnKQQ==
+  dependencies:
+    "@open-web3/orml-type-definitions" "^0.9.4-38"
+
 "@jridgewell/resolve-uri@^3.0.3":
   version "3.0.5"
   resolved "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.0.5.tgz#68eb521368db76d040a6315cdb24bf2483037b9c"
@@ -295,6 +302,13 @@
   version "1.0.2-3"
   resolved "https://registry.npmjs.org/@open-web3/orml-type-definitions/-/orml-type-definitions-1.0.2-3.tgz#14de7906ace3bee5764168e01d59162292a65a61"
   integrity sha512-1O6TFaDP0s/Bm3XI47+eBEx+wHQepIu9uS+rkAorbwLMhfEbYf082Y+JskvOR3cSljNIfP3Zo8bWm+v8Kta+zA==
+  dependencies:
+    lodash.merge "^4.6.2"
+
+"@open-web3/orml-type-definitions@^0.9.4-38":
+  version "0.9.4-38"
+  resolved "https://registry.npmjs.org/@open-web3/orml-type-definitions/-/orml-type-definitions-0.9.4-38.tgz#fc7642f6a518da2618ae39fa76fe046ee57c1e80"
+  integrity sha512-kV0++JlRLEf7Z1y+Jm+792zqx6Q7dzpGP73rJJmQrBaeTML5mQzu4veZ24TVtcLV6hsGjUU/ixrJODNj6CCuZQ==
   dependencies:
     lodash.merge "^4.6.2"
 

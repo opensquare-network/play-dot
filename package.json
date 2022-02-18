@@ -7,6 +7,7 @@
     "@acala-network/api-derive": "4.0.2-15",
     "@acala-network/type-definitions": "4.0.2-15",
     "@acala-network/types": "4.0.2-15",
+    "@bifrost-finance/type-definitions": "^1.4.0",
     "@open-web3/orml-api-derive": "1.0.2-3",
     "@pinata/sdk": "^1.1.23",
     "@polkadot/api": "^7.8.1",
