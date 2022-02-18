@@ -2,7 +2,6 @@ const { ApiPromise, WsProvider } = require("@polkadot/api");
 const defaultKaruraEndPoint = "wss://karura.polkawallet.io";
 const {
   rpc: acalaRpc,
-  types: acalaTypes,
   typesAlias: acalaTypesAlias,
   typesBundle: acalaTypesBundle,
   signedExtensions: acalaSignedExtensions
