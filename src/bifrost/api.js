@@ -1,8 +1,5 @@
 const { ApiPromise, WsProvider } = require("@polkadot/api");
-const {
-  typesBundleForPolkadot: bifrostTypesBundleForPolkadot,
-  rpc,
-} = require("@bifrost-finance/type-definitions");
+const { bifrostOptions } = require("./options")
 
 let provider = null;
 let api = null;
@@ -16,14 +13,8 @@ async function getApi() {
 
   provider = new WsProvider(defaultBifrostEndPoint, 10);
   const options = {
+    ...bifrostOptions,
     provider,
-    typesBundle: {
-      spec: {
-        bifrost: bifrostTypesBundleForPolkadot.spec.bifrost,
-        "bifrost-parachain": bifrostTypesBundleForPolkadot.spec.bifrost,
-      },
-    },
-    rpc,
   };
 
   api = await ApiPromise.create(options);
