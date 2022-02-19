@@ -10,6 +10,8 @@ const provider = new ethers.providers.StaticJsonRpcProvider(providerURL, {
 const rmrkContractAddress = '0xffffffFF893264794d9d57E1E0E21E0042aF5A0A';
 const zlkContractAddress = '0x0f47ba9d9Bde3442b42175e51d6A367928A1173B';
 
+const testMovrAddress = '0xB9b8EF61b7851276B0239757A039d54a23804CBb';
+
 // A Human-Readable ABI; for interacting with the contract, we
 // must include any fragment we wish to use
 const abi = [
@@ -17,12 +19,6 @@ const abi = [
   "function balanceOf(address owner) view returns (uint256)",
   "function decimals() view returns (uint8)",
   "function symbol() view returns (string)",
-
-  // Authenticated Functions
-  "function transfer(address to, uint amount) returns (bool)",
-
-  // Events
-  "event Transfer(address indexed from, address indexed to, uint amount)"
 ];
 
 async function testErc20(contractAddress) {
@@ -31,8 +27,8 @@ async function testErc20(contractAddress) {
   const decimals = await erc20.decimals();
   console.log(`${ tokenName } decimals`, decimals);
 
-  const balance = await erc20.balanceOf('0xad6e6375faa0eec1d725f22c38b84172353fff65', { blockTag: 1503510 })
-  console.log(`${ tokenName } balance`, balance.toString());
+  const balance = await erc20.balanceOf(testMovrAddress, { blockTag: 1503510 })
+  console.log(`${ tokenName } balance`, balance.toString(), ethers.utils.formatUnits(balance, decimals));
 }
 
 ;(async () => {
