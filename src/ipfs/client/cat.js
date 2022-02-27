@@ -17,6 +17,4 @@ const { u8aConcat, u8aToString } = require("@polkadot/util")
   const data = await all(client.cat(hash));
   const str = u8aToString(u8aConcat(...data))
   console.info(str)
-
-  // console.log(a.toString())
 })()
