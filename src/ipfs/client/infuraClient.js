@@ -14,7 +14,7 @@ function getInfuraClient() {
       host: 'ipfs.infura.io',
       port: 5001,
       protocol: 'https',
-      timeout: '10m',
+      timeout: '30m',
       headers: {
         authorization: auth,
       },

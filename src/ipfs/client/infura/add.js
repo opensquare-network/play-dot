@@ -21,6 +21,6 @@ const { CID } = require("multiformats");
     console.log(parsed)
     console.log('v0', parsed.asCID.toV0().toString())
     const res = await client.pin.add(cid)
-    console.log(res)
+    console.log('res', res)
   }
 })();
