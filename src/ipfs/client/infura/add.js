@@ -1,8 +1,9 @@
-const { getInfuraClient } = require("../infuraClient");
+// const { getInfuraClient: getClient } = require("../infuraClient");
+const { getClient } = require("../client")
 const { CID } = require("multiformats");
 
 ;(async () => {
-  const client = getInfuraClient();
+  const client = getClient();
 
   const cids = [
     "bafybeigvbkfmhdgnqko4ev35wfecx7exiyg35gcr7rh45ywlpw2v62itye",
