@@ -17,6 +17,7 @@
     "ipfs-http-client": "^56.0.1",
     "it-all": "^1.0.6",
     "mongoose": "^6.2.3",
-    "multiformats": "^9.6.4"
+    "multiformats": "^9.6.4",
+    "node-fetch": "2.6.7"
   }
 }
