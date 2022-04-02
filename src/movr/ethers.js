@@ -1,11 +1,6 @@
 const { ethers } = require("ethers")
 
-const providerURL = "https://rpc.api.moonriver.moonbeam.network";
-// Define Provider
-const provider = new ethers.providers.StaticJsonRpcProvider(providerURL, {
-  chainId: 1285,
-  name: 'moonriver'
-});
+const { httpProvider: provider } = require("./provider")
 
 const rmrkContractAddress = '0xffffffFF893264794d9d57E1E0E21E0042aF5A0A';
 const zlkContractAddress = '0x0f47ba9d9Bde3442b42175e51d6A367928A1173B';
