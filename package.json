@@ -4,12 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@acala-network/api-derive": "4.0.4-6",
-    "@acala-network/type-definitions": "4.0.4-6",
-    "@acala-network/types": "4.0.4-6",
-    "@bifrost-finance/type-definitions": "1.5.0",
-    "@bifrost-finance/types": "1.5.0",
-    "@open-web3/orml-api-derive": "1.1.3",
+    "@osn/provider-options": "^1.0.1",
     "@pinata/sdk": "^1.1.23",
     "@polkadot/api": "8.0.2",
     "dotenv": "^10.0.0",

@@ -1,5 +1,5 @@
 const { ApiPromise, WsProvider } = require("@polkadot/api");
-const { bifrostOptions } = require("./options")
+const { bifrostOptions } = require("@osn/provider-options")
 
 let provider = null;
 let api = null;
