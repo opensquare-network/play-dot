@@ -4,7 +4,8 @@ const { bifrostOptions } = require("@osn/provider-options")
 let provider = null;
 let api = null;
 
-const defaultBifrostEndPoint = "wss://bifrost-parachain.api.onfinality.io/public-ws";
+// const defaultBifrostEndPoint = "wss://bifrost-parachain.api.onfinality.io/public-ws";
+const defaultBifrostEndPoint = "wss://bifrost-rpc.liebi.com/ws";
 
 async function getApi() {
   if (api) {
