@@ -5,15 +5,28 @@ let api = null;
 
 const kusamaEndPoint = "wss://kusama.api.onfinality.io/public-ws";
 
+async function init() {
+  provider = new WsProvider(kusamaEndPoint);
+  api = await ApiPromise.create({ provider });
+}
+
 async function getApi() {
   if (!api) {
-    provider = new WsProvider(kusamaEndPoint);
-    api = await ApiPromise.create({ provider });
+    await init()
   }
 
   return api;
 }
 
+async function getProvider() {
+  if (!provider) {
+    await init();
+  }
+
+  return provider;
+}
+
 module.exports = {
   getApi,
+  getProvider,
 }
