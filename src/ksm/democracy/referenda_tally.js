@@ -139,7 +139,8 @@ async function getTally(referendumIndex, blockApi, registry) {
 
 ;(async () => {
   const api = await getApi();
-  const height = 1574000;
+  // const height = 1574000;
+  const height = 1574406;
   const blockHash = await api.rpc.chain.getBlockHash(height);
   const blockApi = await api.at(blockHash);
 
