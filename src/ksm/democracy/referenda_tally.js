@@ -98,7 +98,7 @@ async function getDelegationTally(referendumIndex, to, minConviction, recursionL
   }
 }
 
-async function getTally(referendumIndex, blockApi, registry) {
+async function getTally(referendumIndex, blockApi,) {
   const rawVoters = await blockApi.query.democracy.votersFor(referendumIndex);
 
   let ayes = 0;
