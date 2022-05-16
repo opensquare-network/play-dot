@@ -6,7 +6,7 @@
   "dependencies": {
     "@osn/provider-options": "^1.0.1",
     "@pinata/sdk": "^1.1.23",
-    "@polkadot/api": "8.0.2",
+    "@polkadot/api": "8.4.2",
     "bignumber.js": "^9.0.2",
     "dotenv": "^10.0.0",
     "ethers": "^5.5.4",
