@@ -3,7 +3,7 @@ const { encodeAddress } = require("@polkadot/util-crypto");
 
 ;(async () => {
   const api = await getApi();
-  const height = 1574000;
+  const height = 295787;
   const blockHash = await api.rpc.chain.getBlockHash(height);
   const blockApi = await api.at(blockHash);
 
