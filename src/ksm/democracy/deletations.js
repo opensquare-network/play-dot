@@ -6,14 +6,20 @@ const { encodeAddress } = require("@polkadot/util-crypto");
   // const height = 56181;
   // const height = 295787;
   const height = 281787;
+  // const height = 1574000;
   const blockHash = await api.rpc.chain.getBlockHash(height);
   const blockApi = await api.at(blockHash);
 
   const delegations = await blockApi.query.democracy.delegations.entries();
-  const rawKey = delegations[0][0]
-  const slicedIndex = rawKey.length = 64 ? 32 : 40;
-  const addr = encodeAddress(delegations[0][0].slice(slicedIndex), 2);
-  console.log(addr);
+  const storageKey = delegations[0][0];
+  if (storageKey.length === 72) {
+    const delegator = encodeAddress(storageKey.slice(40), 2)
+    console.log('delegator', delegator);
+  }
 
-  console.log(delegations.toJSON());
+  const [toRawAddr, rawConviction] = delegations[0][1];
+  console.log('delegate to', toRawAddr.toString());
+  console.log(rawConviction.toNumber());
+
+  process.exit(0);
 })()

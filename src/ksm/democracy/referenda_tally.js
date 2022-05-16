@@ -32,7 +32,14 @@ async function getAllDelegations(blockApi, update = false) {
   const delegations = await blockApi.query.democracy.delegations.entries();
   let result = [];
   for (const [key, [delegate, conviction]] of delegations) {
-    const delegator = encodeAddress(key.slice(40), 2);
+    let delegator;
+    if (key.length === 72) {
+      delegator = encodeAddress(key.slice(40), 2);
+    } else {
+      // known from history block
+      delegator = "GnL41mJJJTp9npr1W9wLMzEfFL4thqyjPt6hwxLirmJt5vQ"
+    }
+
     result.push({
       delegator,
       delegate: delegate.toString(),
@@ -98,6 +105,21 @@ async function getDelegationTally(referendumIndex, to, minConviction, recursionL
   }
 }
 
+async function getBalance(blockApi, addr) {
+  if (blockApi.query.system?.account) {
+    const account = await blockApi.query.system.account(addr);
+    return new BigNumber(account.data.free.toString()).plus(account.data.reserved.toString());
+  }
+
+  if (blockApi.query.balances.freeBalance) {
+    const free = await blockApi.query.balances.freeBalance(addr);
+    const reserved = await blockApi.query.balances.reservedBalance(addr);
+    return new BigNumber(free.toString()).plus(reserved.toString()).toString();
+  }
+
+  throw new Error(`Can not get balance of ${addr}`)
+}
+
 async function getTally(referendumIndex, blockApi,) {
   const rawVoters = await blockApi.query.democracy.votersFor(referendumIndex);
 
@@ -106,11 +128,11 @@ async function getTally(referendumIndex, blockApi,) {
   let turnout = 0;
   const voters = rawVoters.toJSON();
   for (const voter of voters) {
-    const account = await blockApi.query.system.account(voter);
-    const total = new BigNumber(account.data.free.toString()).plus(account.data.reserved.toString());
+    let total = await getBalance(blockApi, voter);
+    total = new BigNumber(total);
 
     const vote = await blockApi.query.democracy.voteOf([referendumIndex, voter]);
-    console.log('voter', voter, total.toString(), vote.conviction.toNumber());
+    console.log('voter', voter, 'total value', total.dividedBy(Math.pow(10, 12)).toString(), 'conviction', vote.conviction.toNumber());
     const power = total.multipliedBy(getMultiplier(vote.conviction)).toFixed(0);
     const {votes: delPower, capital: delCapital} = await getDelegationTally(
       referendumIndex,
@@ -140,11 +162,12 @@ async function getTally(referendumIndex, blockApi,) {
 ;(async () => {
   const api = await getApi();
   // const height = 1574000;
-  const height = 1574406;
+  // const height = 1574406;
+  const height = 56180; // referendum index: 0
   const blockHash = await api.rpc.chain.getBlockHash(height);
   const blockApi = await api.at(blockHash);
 
-  const tally = await getTally(42, blockApi, api.registry);
+  const tally = await getTally(0, blockApi, api.registry);
   console.log(tally);
 
   process.exit(0);
