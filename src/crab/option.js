@@ -189,6 +189,7 @@ const crabOptions = {
           }
         }, {
           "minmax": [1, 41], "types": {
+            "RawHeaderThing": "Vec<u8>",
             "UsableBalance": { "usableBalance": "Balance" },
             "Status": { "_enum": { "Free": null, "Reserved": null } },
             "LockIdentifier": "[u8; 8]",
