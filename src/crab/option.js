@@ -370,7 +370,7 @@ const crabOptions = {
             "EthereumReceiptProof": { "index": "u64", "proof": "Bytes", "headerHash": "H256" },
             "MMRProof": { "memberLeafIndex": "u64", "lastLeafIndex": "u64", "proof": "Vec<H256>" },
             "NominatorIndexCompact": "u32",
-            "ValidatorIndexCompact": "u32",
+            "ValidatorIndexCompact": "u16",
             "OffchainAccuracyCompact": "PerU16",
             "PerU16": "UInt<16, PerU16>",
             "DoubleNodeWithMerkleProof": { "dag_nodes": "[H512;2]", "proof": "Vec<H128>" },
