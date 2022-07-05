@@ -16,10 +16,14 @@ async function getApi() {
 
 async function main() {
   const api = await getApi();
-  const blockHash = await api.rpc.chain.getBlockHash(10373931);
+  const height = 492360;
+  const blockHash = await api.rpc.chain.getBlockHash(height);
   const block = await api.rpc.chain.getBlock(blockHash);
+  const blockApi = await api.at(blockHash);
+  const events = await blockApi.query.system.events();
 
   console.log(block);
+  process.exit(0)
 }
 
 main()
