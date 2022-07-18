@@ -1,4 +1,5 @@
 const { getApi } = require("../api");
+const { hexToU8a } = require("@polkadot/util");
 
 ;(async () => {
   const api = await getApi();
@@ -8,7 +9,11 @@ const { getApi } = require("../api");
   const blockApi = await api.at(blockHash);
   const raw = await blockApi.query.democracy.preimages("0xe44631aec9d6257c4a7e7fab5393c2f6627216d165c5ebe39d9937ce5dfed762");
 
-  console.log(raw.toJSON());
+  const call = blockApi.registry.createType("Proposal", raw.unwrap().asAvailable.data);
+
+  console.log('section:', call.section);
+  console.log('method:', call.method);
+  console.log(call.toJSON());
 
   process.exit(0)
 })()
