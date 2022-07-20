@@ -12,6 +12,7 @@
     "ethers": "^5.5.4",
     "ipfs-http-client": "^56.0.1",
     "it-all": "^1.0.6",
+    "lodash.difference": "^4.5.0",
     "mongoose": "^6.2.3",
     "multiformats": "^9.6.4",
     "node-fetch": "2.6.7"
