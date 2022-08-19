@@ -45,23 +45,22 @@ function extractVotes(mapped, targetReferendumIndex, blockApi) {
     .reduce((result, { account, vote }) => {
       // FIXME We are ignoring split votes
       if (vote.isStandard) {
+        const standard = vote.asStandard;
+        const balance = standard.balance.toBigInt().toString();
+        const vote = standard.vote;
         result.push(
           objectSpread({
             account,
             isDelegating: false
-          }, vote.asStandard.toJSON())
+          }, {
+            balance,
+            vote,
+          })
         );
       }
 
       return result;
     }, [])
-    .map(item => {
-      const vote = blockApi.registry.createType("Vote", item.vote);
-      return {
-        ...item,
-        vote,
-      }
-    })
 }
 
 function extractDelegations(mapped, directVotes = [], blockApi) {
@@ -82,7 +81,7 @@ function extractDelegations(mapped, directVotes = [], blockApi) {
     if (to) {
       newVotes.push({
         account,
-        balance: balance.toBigInt.toString(),
+        balance: balance.toBigInt().toString(),
         isDelegating: true,
         vote: blockApi.registry.createType('Vote', { aye: to.vote.isAye, conviction })
       })
@@ -104,7 +103,7 @@ function extractDelegations(mapped, directVotes = [], blockApi) {
   const directVotes = extractVotes(mapped, targetReferendumIndex, blockApi);
   const votesViaDelegating = extractDelegations(mapped, directVotes, blockApi);
 
-  const referendumVotes = [...directVotes, votesViaDelegating];
+  const referendumVotes = [...directVotes, ...votesViaDelegating];
   console.log(referendumVotes);
 
   process.exit(0)
