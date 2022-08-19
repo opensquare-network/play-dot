@@ -24,8 +24,11 @@ async function compare(height) {
 }
 
 ;(async () => {
-  const members = await getMembers(54289);
-  console.log(members)
+  // const members = await getMembers(54289);
+  // console.log(members)
+
+  const height = 12480986;
+  await compare(height);
 
   process.exit(0);
 })();
