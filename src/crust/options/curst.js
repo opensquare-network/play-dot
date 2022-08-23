@@ -170,6 +170,7 @@ const spec = {
             16
           ],
           "types": {
+            "DispatchErrorModule": "DispatchErrorModuleU8",
             "AccountInfo": "AccountInfoWithProviders",
             "Address": "AccountId",
             "AddressInfo": "Vec<u8>",
@@ -303,6 +304,7 @@ const spec = {
             null
           ],
           "types": {
+            "DispatchErrorModule": "DispatchErrorModuleU8",
             "AccountInfo": "AccountInfoWithProviders",
             "Address": "AccountId",
             "AddressInfo": "Vec<u8>",
