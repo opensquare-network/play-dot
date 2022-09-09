@@ -15,6 +15,7 @@
     "lodash.difference": "^4.5.0",
     "mongoose": "^6.2.3",
     "multiformats": "^9.6.4",
-    "node-fetch": "2.6.7"
+    "node-fetch": "2.6.7",
+    "utf-8-validate": "^5.0.9"
   }
 }
