@@ -2,7 +2,7 @@ const { getApi } = require("../api");
 
 ;(async () => {
   const api = await getApi();
-  const height = 81835;
+  const height = 82406;
   const blockHash = await api.rpc.chain.getBlockHash(height);
   const blockApi = await api.at(blockHash);
 
