@@ -6,7 +6,10 @@ const { getApi } = require("../api");
   const blockHash = await api.rpc.chain.getBlockHash(height);
   const blockApi = await api.at(blockHash);
 
-  const raw = await blockApi.query.preimage.preimageFor(["0x68f4b30505dec1ac8e5a60f12e776bfb4aa8301e520dfa43f2c05cf3f2296d0f", 6]);
+  const hash = "0x68f4b30505dec1ac8e5a60f12e776bfb4aa8301e520dfa43f2c05cf3f2296d0f";
+  const status = await blockApi.query.preimage.statusFor(hash);
+  const len = Object.values(status.toJSON())[0].len;
+  const raw = await blockApi.query.preimage.preimageFor(["0x68f4b30505dec1ac8e5a60f12e776bfb4aa8301e520dfa43f2c05cf3f2296d0f", len]);
   const call = blockApi.registry.createType("Proposal", raw.unwrap());
 
   console.log('section:', call.section);
