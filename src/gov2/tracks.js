@@ -22,7 +22,7 @@ function normalize(track = {}) {
   const normalized = tracks.map(([id, obj]) => {
     return {
       id,
-      info: normalize(obj),
+      ...normalize(obj),
     }
   });
 
