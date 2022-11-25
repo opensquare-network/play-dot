@@ -4,8 +4,8 @@ let provider = null;
 let api = null;
 
 // const kusamaEndPoint = "wss://kusama.api.onfinality.io/public-ws";
-// const kusamaEndPoint = "wss://kusama-rpc.polkadot.io";
-const kusamaEndPoint = "wss://kusama.public.curie.radiumblock.xyz/ws";
+const kusamaEndPoint = "wss://kusama-rpc.polkadot.io";
+// const kusamaEndPoint = "wss://kusama.public.curie.radiumblock.xyz/ws";
 
 async function init() {
   provider = new WsProvider(kusamaEndPoint);
