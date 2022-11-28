@@ -2,7 +2,6 @@ const BigNumber = require("bignumber.js");
 
 function reciprocal(factor, xOffset, yOffset) {
   return function(x) {
-    BigNumber.set({ ROUNDING_MODE: BigNumber.ROUND_DOWN });
     const v = new BigNumber(factor)
       .div(new BigNumber(x).plus(xOffset))
       .multipliedBy(Math.pow(10, 9)).toFixed(0, BigNumber.ROUND_DOWN);
