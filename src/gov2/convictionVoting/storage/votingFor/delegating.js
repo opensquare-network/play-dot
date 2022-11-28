@@ -29,4 +29,5 @@ function extractAllDelegations(entries = [], api) {
 
 module.exports = {
   extractAllDelegations,
+  normalizeDelegating,
 }
