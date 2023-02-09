@@ -54,6 +54,7 @@ function extractDelegation(votingOf) {
 
 ;(async () => {
   const api = await getApi();
+  // const entries = await api.query.convictionVoting.votingFor.entries("5Dw5KnvTs96FaRQFez1Su15XMMJ65QAi4F1ugNBaXUBiGbX6");
   const entries = await api.query.convictionVoting.votingFor.entries();
   for (const [storageKey, votingOf] of entries) {
     const { accountU8a, classIdU8a } = extractInfo(storageKey);
