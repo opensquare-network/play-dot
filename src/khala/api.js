@@ -1,15 +1,5 @@
 const { ApiPromise, WsProvider } = require("@polkadot/api");
-const { versionedKhala } = require("@phala/typedefs");
-
-const typesBundle = {
-  spec: {
-    khala: {
-      alias: {},
-      rpc: {},
-      types: versionedKhala
-    }
-  }
-}
+const { khala } = require("@osn/provider-options");
 
 let provider = null;
 let api = null;
@@ -20,7 +10,7 @@ async function init() {
   provider = new WsProvider(polkadotEndPoint);
   api = await ApiPromise.create({
     provider,
-    typesBundle,
+    khala,
   });
 }
 
