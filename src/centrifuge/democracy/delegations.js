@@ -18,14 +18,17 @@ function getAddress(storageKey, api) {
   const voting = await api.query.democracy.votingOf.entries();
   const allDelegations = voting.filter(item => item[1].isDelegating);
 
-  const target = "D2r9AudNkHHpKfGtS5rpVHkchBoBhRsR6TmNcTuU4yiTp6w";
-  const targets = allDelegations.filter(([who, value]) => {
+  const value = allDelegations.map(([who, value]) => {
+    const delegator = getAddress(who, api);
     const delegating = value.asDelegating;
-    const delegatingTarget = delegating.target.toString();
-    return delegatingTarget === target;
-  })
+    const delegatee = delegating.target.toString();
+    const balance = delegating.balance.toString();
+    return {
+      delegator,
+      delegatee,
+      balance,
+    }
+  });
 
-  const allDelegators = targets.map(([who]) => getAddress(who, api));
-
-  console.log(allDelegators);
+  console.log(value);
 })();
