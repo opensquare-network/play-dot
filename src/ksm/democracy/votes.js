@@ -43,6 +43,7 @@ function extractVotes(mapped, targetReferendumIndex, blockApi) {
       }
     })
     .reduce((result, { account, vote }) => {
+      console.log('vote', vote);
       // FIXME We are ignoring split votes
       if (vote.isStandard) {
         const standard = vote.asStandard;
@@ -100,7 +101,8 @@ function extractDelegations(mapped, directVotes = [], blockApi) {
   const voting = await blockApi.query.democracy.votingOf.entries();
   const mapped = voting.map(item => normalizeEntry(item, blockApi));
   const targetReferendumIndex = 218;
-  const directVotes = extractVotes(mapped, targetReferendumIndex, blockApi);
+  // const directVotes = extractVotes(mapped, targetReferendumIndex, blockApi);
+  const directVotes = [];
   const votesViaDelegating = extractDelegations(mapped, directVotes, blockApi);
 
   const referendumVotes = [...directVotes, ...votesViaDelegating];
