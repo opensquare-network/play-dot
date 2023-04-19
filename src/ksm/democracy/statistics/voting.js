@@ -7,9 +7,11 @@ const BigNumber = require("bignumber.js");
 
 ;(async () => {
   const referendumIndex = 234;
+  // const referendumIndex = 43;
 
   const api = await getApi();
   const height = 14720558;
+  // const height = 1713600;
   const blockHash = await api.rpc.chain.getBlockHash(height);
 
   const preBlockHash = await api.rpc.chain.getBlockHash(height - 1);
