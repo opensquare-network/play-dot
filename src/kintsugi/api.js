@@ -1,5 +1,5 @@
 const { ApiPromise, WsProvider } = require("@polkadot/api");
-const { kintsugi } = require("@osn/provider-options");
+const kintsugi = require("./types");
 
 let provider = null;
 let api = null;
