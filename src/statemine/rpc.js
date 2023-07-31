@@ -18,10 +18,11 @@ async function getApi() {
 }
 
 (async () => {
-  await getApi();
+  const api = await getApi();
 
-  const hash = await api.rpc.chain.getFinalizedHead()
-  const head = await api.rpc.chain.getHeader(hash);
+  // const hash = await api.rpc.chain.getFinalizedHead()
+  // const head = await api.rpc.chain.getHeader(hash);
+  const hash = await api.rpc.chain.getBlockHash(5000000);
 
-  console.log(head)
+  console.log(hash)
 })()
