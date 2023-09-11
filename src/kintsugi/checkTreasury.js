@@ -1,4 +1,4 @@
-const { getApi } = require("./interlay-api");
+const { getApi } = require("./api");
 
 async function hasTreasury(height) {
   const api = await getApi();
@@ -9,8 +9,9 @@ async function hasTreasury(height) {
 }
 
 (async () => {
-  let start = 2959904;
-  let end = 2959905;
+  // let start = 2959904;
+  let start = 2252464;
+  let end = 3733544;
 
   await hasTreasury(end);
 
@@ -19,6 +20,7 @@ async function hasTreasury(height) {
     let has = await hasTreasury(middle);
     if (has) {
       start = middle;
+      console.log(`${ middle } has treasury`);
     } else {
       end = middle;
     }
@@ -27,4 +29,5 @@ async function hasTreasury(height) {
   }
 
   console.log("start", start, "end", end);
+  process.exit(0);
 })();
