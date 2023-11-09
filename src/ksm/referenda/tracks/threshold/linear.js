@@ -12,6 +12,7 @@ function linear(length, floor, ceil) {
 
 ;(() => {
   const testX = 1 / 672 * Math.pow(10, 9);
+  console.log("testX", testX);
   const treasurer = linear(1000000000, 0, 500000000);
   const value = treasurer(testX);
 
