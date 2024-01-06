@@ -21,7 +21,7 @@ function logRawStatus(rawStatus, hash) {
       len = maybeLen.unwrap().toNumber();
     }
 
-    console.log("depositor", depositor, "deposit", deposit, "len", len);
+    console.log("hash", hash, "depositor", depositor, "deposit", deposit, "len", len);
   }
 
   if (status.isUnrequested) {
@@ -29,7 +29,7 @@ function logRawStatus(rawStatus, hash) {
     const depositor = unRequestedValue.ticket[0].toString();
     const deposit = unRequestedValue.ticket[1].toJSON();
     const len = unRequestedValue.len.toNumber();
-    console.log("depositor", depositor, "deposit", deposit, "len", len);
+    console.log("hash", hash, "depositor", depositor, "deposit", deposit, "len", len);
   }
 }
 
