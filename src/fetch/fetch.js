@@ -1,7 +1,5 @@
-const fetch = require('node-fetch');
-
 ;(async () => {
-  const res = await fetch('https://test-node-api.opensquare.io/karura/chain/height')
+  const res = await fetch('https://polkadot.subsquare.io/api/inspect/scanheight')
   const json = await res.json()
   console.log(json)
 })();

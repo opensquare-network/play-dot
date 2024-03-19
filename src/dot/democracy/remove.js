@@ -7,13 +7,20 @@ async function hasDemocracyPallet(height) {
   return !!blockApi.query.democracy;
 }
 
+async function hasTipsPallet(height) {
+  const api = await getApi();
+  const blockApi = await findBlockApiByHeight(height, api);
+  return !!blockApi.query.tips;
+}
+
+
 ;(async () => {
   let start = 18144000;
   let end = 18692867;
 
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
-    const has = await hasDemocracyPallet(middle);
+    const has = await hasTipsPallet(middle);
     if (has) {
       start = middle;
     } else {

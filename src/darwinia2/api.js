@@ -3,7 +3,7 @@ const { ApiPromise, WsProvider } = require("@polkadot/api");
 let provider = null;
 let api = null;
 
-const endPoint = "wss://rpc.darwinia.network/";
+const endPoint = "wss://pangolin-rpc.darwinia.network/";
 
 async function init() {
   provider = new WsProvider(endPoint);
