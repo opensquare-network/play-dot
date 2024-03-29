@@ -3,8 +3,8 @@ const { ApiPromise, WsProvider } = require("@polkadot/api");
 let provider = null;
 let api = null;
 
-// const defaultBifrostEndPoint = "wss://polkadot-collectives-rpc.dwellir.com/";
-const defaultBifrostEndPoint = "wss://tc.subsquare.io";
+const defaultBifrostEndPoint = "wss://polkadot-collectives-rpc.dwellir.com/";
+// const defaultBifrostEndPoint = "wss://tc.subsquare.io";
 
 async function getApi() {
   if (api) {
