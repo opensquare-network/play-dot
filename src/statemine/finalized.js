@@ -3,7 +3,8 @@ let provider = null;
 let api = null;
 
 // const statemineEndPoint = "wss://kusama-statemine-rpc.paritytech.net";
-const statemineEndPoint = "wss://statemine.api.onfinality.io/public-ws";
+// const statemineEndPoint = "wss://statemine.api.onfinality.io/public-ws";
+const statemineEndPoint = "wss://testnet-rpc.tangle.tools/";
 // const statemineEndPoint = "wss://pub.elara.patract.io/statemine";
 
 async function getApi() {
