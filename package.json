@@ -9,6 +9,7 @@
     "@pinata/sdk": "^1.1.23",
     "@polkadot/api": "10.10.1",
     "bignumber.js": "^9.0.2",
+    "ccxt": "^4.2.97",
     "cron": "^3.1.6",
     "dotenv": "^10.0.0",
     "ethers": "^5.5.4",

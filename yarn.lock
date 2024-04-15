@@ -976,6 +976,13 @@ cborg@^1.5.4, cborg@^1.6.0:
   resolved "https://registry.npmmirror.com/cborg/-/cborg-1.8.0.tgz#d75be6c5cdaa0f9aab3d24c62b8d2c47ed57ca76"
   integrity sha512-zT4TJQJJFXLGpd0iMmj1gQCscbcrBxC6X5S0D9bdA8nH34ZbsSdtzJXD0A2ZJzBWP95WI1pKX9CLkwW6UpolwA==
 
+ccxt@^4.2.97:
+  version "4.2.97"
+  resolved "https://r.cnpmjs.org/ccxt/-/ccxt-4.2.97.tgz#658f7a734e5d0b7a4eeb25a8d529854af0c8a107"
+  integrity sha512-4ZoaANjkJUX/6F+W+6v5K/zQshXIIjJtDbcJwr9GakJGtvNZI78DEt0/7N6IW0p7dfg6cWr3r2KIeZ5TEqfDBA==
+  dependencies:
+    ws "^8.8.1"
+
 cids@~0.7.0:
   version "0.7.5"
   resolved "https://registry.nlark.com/cids/download/cids-0.7.5.tgz#60a08138a99bfb69b6be4ceb63bfef7a396b28b2"
