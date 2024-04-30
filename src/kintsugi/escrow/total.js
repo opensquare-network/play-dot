@@ -4,7 +4,7 @@ const { findBlockHash } = require("../../common/blockHash");
 
 async function main() {
   const api = await getApi();
-  const height = 525663;
+  const height = 4551663;
   const blockHash = await findBlockHash(height, api);
 
   const supply = await api.rpc.escrow.totalSupply(height, blockHash); // produce error: `(Execution(Other("Exported method EscrowApi_total_supply is not found")))`
