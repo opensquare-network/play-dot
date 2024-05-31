@@ -3,9 +3,7 @@ const { ApiPromise, WsProvider } = require("@polkadot/api");
 let provider = null;
 let api = null;
 
-const endPoint = "wss://rococo-rpc.polkadot.io/";
-// const endPoint = "wss://karura-rpc-2.aca-api.network/ws";
-// const endPoint = "wss://rpc.polkadot.io/";
+const endPoint = "wss://westend-rpc.blockops.network/ws";
 
 async function init() {
   provider = new WsProvider(endPoint);
