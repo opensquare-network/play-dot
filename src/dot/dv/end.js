@@ -1,5 +1,5 @@
-const { getApi } = require("../api");
 const BigNumber = require("bignumber.js");
+const { getApi } = require("../api");
 
 async function queryDelegations(api, height, address) {
   let blockApi = api;
@@ -14,7 +14,7 @@ async function queryDelegations(api, height, address) {
 }
 
 function gte6M(v) {
-  return new BigNumber(v).gte(4000000);
+  return new BigNumber(v).gte(6000000);
 }
 
 async function isDv(api, height, address) {
@@ -24,19 +24,20 @@ async function isDv(api, height, address) {
 
 ;(async () => {
   const api = await getApi();
-  const address = "12pXignPnq8sZvPtEsC3RdhDLAscqzFQz97pX2tpiNp3xLqo";
-  let start = 21157749, end = 21178703;
+  const address = "12mP4sjCfKbDyMRAEyLpkeHeoYtS5USY4x34n9NMwQrcEyoh";
+  let start = 20000000, end = 21167923;
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
     const yes = await isDv(api, middle, address);
     if (yes) {
-      end = middle;
+      start = middle;
       console.log(`${ middle } is DV`);
     } else {
-      start = middle;
+      end = middle;
     }
 
     console.log("start", start, "end", end, "middle", middle);
   }
-  process.exit(0)
+
+  process.exit(0);
 })();

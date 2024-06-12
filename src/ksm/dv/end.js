@@ -1,5 +1,5 @@
-const { getApi } = require("../api");
 const BigNumber = require("bignumber.js");
+const { getApi } = require("../api");
 
 async function queryDelegations(api, height, address) {
   let blockApi = api;
@@ -9,12 +9,12 @@ async function queryDelegations(api, height, address) {
   }
 
   const rawVotingFor = await blockApi.query.convictionVoting.votingFor(address, 33);
-  const delegations = rawVotingFor.asCasting.delegations.votes.toString() / Math.pow(10, 10);
+  const delegations = rawVotingFor.asCasting.delegations.votes.toString() / Math.pow(10, 12);
   return delegations;
 }
 
 function gte6M(v) {
-  return new BigNumber(v).gte(4000000);
+  return new BigNumber(v).gte(30000);
 }
 
 async function isDv(api, height, address) {
@@ -24,19 +24,22 @@ async function isDv(api, height, address) {
 
 ;(async () => {
   const api = await getApi();
-  const address = "12pXignPnq8sZvPtEsC3RdhDLAscqzFQz97pX2tpiNp3xLqo";
-  let start = 21157749, end = 21178703;
+
+  const address = "J9FdcwiNLso4hcJFTeQvy7f7zszGhKoVh5hdBM2qF7joJQa";
+  let start = 23000000, end = 23563984;
+
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
     const yes = await isDv(api, middle, address);
     if (yes) {
-      end = middle;
+      start = middle;
       console.log(`${ middle } is DV`);
     } else {
-      start = middle;
+      end = middle;
     }
 
     console.log("start", start, "end", end, "middle", middle);
   }
-  process.exit(0)
+
+  process.exit(0);
 })();
