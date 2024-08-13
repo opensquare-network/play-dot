@@ -17,8 +17,8 @@ async function query() {
 }
 
 ;(async () => {
-  await entries();
-  // await query();
+  // await entries();
+  await query();
 
   process.exit(0);
 })();

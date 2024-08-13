@@ -3,11 +3,11 @@ const { ApiPromise, WsProvider } = require("@polkadot/api");
 let provider = null;
 let api = null;
 
-const endPoint = "wss://westend-rpc.polkadot.io/";
+const endPoint = "wss://rpc.laos.laosfoundation.io/";
 
 async function init() {
   provider = new WsProvider(endPoint);
-  api = await ApiPromise.create({ provider, });
+  api = await ApiPromise.create({ provider });
 }
 
 async function getApi() {
