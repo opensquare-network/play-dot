@@ -1,0 +1,60 @@
+const { getApi } = require("../api");
+const { findBlockHash } = require("../../common/blockHash");
+
+const delegator = "CazX11fyBSdXGr1Z1ehzySwj5VQyHkQgevVjQteXxRzGgnJ";
+const delegatee = "E7nEKjJKdZtU5zV1GceAwTVXJzN5te4igmv12MwX45AE2Px";
+
+async function isDelegatee(api, height) {
+  const blockHash = await findBlockHash(height, api);
+  const blockApi = await api.at(blockHash);
+  let proxies;
+  try {
+    proxies = await blockApi.query.proxy.proxies(delegator);
+  } catch (e) {
+    return true;
+  }
+  if (!proxies || !Array.isArray(proxies)) {
+    return false;
+  }
+
+  const arr = proxies[0];
+  for (const item of arr) {
+    if (item.delegate && item.delegate.toString() === delegatee) {
+      return true;
+    }
+
+    if (Array.isArray(item)) {
+      const [addrBytes] = item;
+      if (addrBytes.toString() === delegatee) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+(async () => {
+  const api = await getApi();
+  // const height = 760000;
+  // const height = 700000;
+
+  // const is = await isDelegatee(api, height);
+  // console.log(`is delegatee ${is}`);
+
+  let start = 22088973, end = 24586181;
+  while (start < end - 1) {
+    let middle = parseInt((start + end) / 2);
+    const yes = await isDelegatee(api, middle);
+    if (yes) {
+      start = middle;
+      console.log(`${ middle } is delegatee`);
+    } else {
+      end = middle;
+    }
+
+    console.log("start", start, "end", end, "middle", middle);
+  }
+
+  process.exit(0);
+})();
