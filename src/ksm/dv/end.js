@@ -14,23 +14,26 @@ async function queryDelegations(api, height, address) {
 }
 
 function gte6M(v) {
-  return new BigNumber(v).gte(30000);
+  return new BigNumber(v).gte(18000);
 }
 
 async function isDv(api, height, address) {
   const delegations = await queryDelegations(api, height, address);
-  return gte6M(delegations);
+  return {
+    delegations,
+    isDv: gte6M(delegations),
+  }
 }
 
 ;(async () => {
   const api = await getApi();
 
-  const address = "J9FdcwiNLso4hcJFTeQvy7f7zszGhKoVh5hdBM2qF7joJQa";
-  let start = 23000000, end = 23563984;
+  const address = "DG8Q1VmFkmDwuKDN9ZqdB78W6BiXTX5Z33XzZNAykuB5nFh";
+  let start = 23707164, end = 25280955;
 
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
-    const yes = await isDv(api, middle, address);
+    const { delegations, isDv: yes } = await isDv(api, middle, address);
     if (yes) {
       start = middle;
       console.log(`${ middle } is DV`);
@@ -39,6 +42,14 @@ async function isDv(api, height, address) {
     }
 
     console.log("start", start, "end", end, "middle", middle);
+    if (start >= end - 1) {
+      console.log(`delegations at ${middle}:`, delegations);
+      const delegations2 = await queryDelegations(api, middle + 1, address);
+      console.log(`delegations at ${middle + 1}:`, delegations2);
+
+      const delegations3 = await queryDelegations(api, middle - 1, address);
+      console.log(`delegations at ${middle - 1}:`, delegations3);
+    }
   }
 
   process.exit(0);

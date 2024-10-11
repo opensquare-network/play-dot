@@ -1,9 +1,9 @@
 const { getApi } = require("../api");
 const { findBlockHash } = require("../../common/blockHash");
 
-const delegator = "DjyH2RmRZnygRb5yBapufkJMVSiaErkzp4CpYq7voz1ttUz";
-const delegatee = "Cf6oWkZSuEJAU4QpfUC4j14bS9XgMF5Fg6MapGQpspiR1PC";
-const type = "NonTransfer";
+const delegator = "FWKXyqL8YhH7fyazuFiGswDcQEvJNSnbSVjc6mFDGL5i342";
+const delegatee = "H1tAQMm3eizGcmpAhL9aA9gR844kZpQfkU7pkmMiLx9jSzE";
+const type = "Any";
 
 async function isDelegatee(api, height) {
   const blockHash = await findBlockHash(height, api);
@@ -43,7 +43,7 @@ async function isDelegatee(api, height) {
   // const is = await isDelegatee(api, height);
   // console.log(`is delegatee ${is}`);
 
-  let start = 4854123, end = 24747495;
+  let start = 14359985, end = 24747495;
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
     const yes = await isDelegatee(api, middle);
