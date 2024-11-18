@@ -4,11 +4,12 @@ let provider = null;
 let api = null;
 
 // const kusamaEndPoint = "wss://kusama.api.onfinality.io/public-ws";
-const kusamaEndPoint = "wss://fullnode.parachain.centrifuge.io/";
+// const kusamaEndPoint = "wss://fullnode.parachain.centrifuge.io/";
+const cfgEndPoint = "wss://centrifuge-parachain.api.onfinality.io/public-ws";
 // const kusamaEndPoint = "wss://kusama.public.curie.radiumblock.xyz/ws";
 
 async function init() {
-  provider = new WsProvider(kusamaEndPoint);
+  provider = new WsProvider(cfgEndPoint);
   api = await ApiPromise.create({ provider });
 }
 
