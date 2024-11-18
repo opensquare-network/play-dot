@@ -13,19 +13,19 @@ async function queryDelegations(api, height, address) {
   return delegations;
 }
 
-function gte17k(v) {
-  return new BigNumber(v).gte(17000);
+function gte30k(v) {
+  return new BigNumber(v).gte(90000);
 }
 
 async function isDv(api, height, address) {
   const delegations = await queryDelegations(api, height, address);
-  return gte17k(delegations);
+  return gte30k(delegations);
 }
 
 async function findPoint() {
   const api = await getApi();
-  const address = "DG8Q1VmFkmDwuKDN9ZqdB78W6BiXTX5Z33XzZNAykuB5nFh";
-  let start = 23551312, end = 23809971;
+  const address = "DCZyhphXsRLcW84G9WmWEXtAA8DKGtVGSFZLJYty8Ajjyfa";
+  let start = 23551312, end = 25829708;
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
     const yes = await isDv(api, middle, address);
