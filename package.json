@@ -23,6 +23,7 @@
     "mongoose": "^6.2.3",
     "multiformats": "13.1.0",
     "node-fetch": "2.6.7",
-    "utf-8-validate": "^5.0.9"
+    "utf-8-validate": "^5.0.9",
+    "web3": "^4.15.0"
   }
 }
