@@ -1,9 +1,9 @@
 const { getApi } = require("../api");
 const { findBlockHash } = require("../../common/blockHash");
 
-const delegator = "1KvKReVmUiTc2LW2a4qyHsaJJ9eE9LRsywZkMk5hyBeyHgw";
-const delegatee = "14TKt6bUNjKJdfYqVDNFBqzDAwmJ7WaQwfUmxmizJHHrr1Gs";
-const type = "UnusedSudoBalances";
+const delegator = "15ubZj6T7NUYyQw6j4XBkEMJ2vew5w9kqKEcN1QG7Z1weKDV";
+const delegatee = "13znFMMjHyM2UvSewvaKMC2bLUcySRMzcM8BAMTzm1G2P5ju";
+const type = "Governance";
 
 async function isDelegatee(api, height) {
   const blockHash = await findBlockHash(height, api);
@@ -43,18 +43,19 @@ async function isDelegatee(api, height) {
   // const is = await isDelegatee(api, height);
   // console.log(`is delegatee ${is}`);
 
-  let start = 188889, end = 22356048;
+  let start = 188889, end = 23573874;
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
     const yes = await isDelegatee(api, middle);
     if (yes) {
-      start = middle;
-    } else {
       end = middle;
+    } else {
+      start = middle;
     }
 
     console.log("start", start, "end", end, "middle", middle);
   }
 
+  console.log("finished");
   process.exit(0);
 })();
