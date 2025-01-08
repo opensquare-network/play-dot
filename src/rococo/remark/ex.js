@@ -36,7 +36,7 @@ function getBlockIndexer(block) {
   const account = await getAccount();
 
   let blockHash;
-  const unsub = await api.tx.system.remark("hello world").signAndSend(account, async (result) => {
+  api.tx.system.remark("hello world").signAndSend(account, async (result) => {
     console.log(`Current status is ${ result.status }`);
 
     if (result.status.isInBlock) {
@@ -44,10 +44,15 @@ function getBlockIndexer(block) {
       blockHash = result.status.asInBlock.toString();
     } else if (result.status.isFinalized) {
       console.log(`Transaction finalized at blockHash ${ result.status.asFinalized }`);
-      const block = await api.rpc.chain.getBlock(blockHash);
-      const indexer = getBlockIndexer(block.block);
+      const blockHeight = result.blockNumber.toNumber();
+      const blockHash = result.status.asFinalized.toString();
+      const extrinsicIndex = result.txIndex;
+      const indexer = {
+        blockHeight,
+        blockHash,
+        extrinsicIndex,
+      };
       console.log(indexer);
-      unsub();
     }
   });
 })();
