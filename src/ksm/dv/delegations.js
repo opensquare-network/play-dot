@@ -48,6 +48,7 @@ async function query() {
   console.log(delegations);
 }
 
+
 ;(async () => {
   // await query();
   await findPoint();

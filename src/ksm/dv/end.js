@@ -13,32 +13,32 @@ async function queryDelegations(api, height, address) {
   return delegations;
 }
 
-function gte6M(v) {
-  return new BigNumber(v).gte(18000);
+function gte30k(v) {
+  return new BigNumber(v).gte(30000);
 }
 
 async function isDv(api, height, address) {
   const delegations = await queryDelegations(api, height, address);
   return {
     delegations,
-    isDv: gte6M(delegations),
+    isDv: gte30k(delegations),
   }
 }
 
 ;(async () => {
   const api = await getApi();
 
-  const address = "DG8Q1VmFkmDwuKDN9ZqdB78W6BiXTX5Z33XzZNAykuB5nFh";
-  let start = 23707164, end = 25280955;
+  const address = "ELCdsyWFNC7twEeBcQvdpCmpJhGBgiVeWtaKqRqXGn5ATiA";
+  let start = 23707164, end = 27951456;
 
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
     const { delegations, isDv: yes } = await isDv(api, middle, address);
     if (yes) {
-      start = middle;
+      end = middle;
       console.log(`${ middle } is DV`);
     } else {
-      end = middle;
+      start = middle;
     }
 
     console.log("start", start, "end", end, "middle", middle);

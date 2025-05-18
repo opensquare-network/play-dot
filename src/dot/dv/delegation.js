@@ -22,21 +22,35 @@ async function isDv(api, height, address) {
   return gte6M(delegations);
 }
 
-;(async () => {
+async function binarySearch() {
   const api = await getApi();
   const address = "12pXignPnq8sZvPtEsC3RdhDLAscqzFQz97pX2tpiNp3xLqo";
-  let start = 23352824, end = 23461645;
+  let start = 23364976, end = 25571285;
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
     const yes = await isDv(api, middle, address);
     if (yes) {
-      end = middle;
+      start = middle;
       console.log(`${ middle } is DV`);
     } else {
-      start = middle;
+      end = middle;
     }
 
     console.log("start", start, "end", end, "middle", middle);
   }
+}
+
+async function queryAddrDelegations() {
+  const api = await getApi();
+  const address = "14ZaBmSkr6JWf4fUDHbApqHBvbeeAEBSAARxgzXHcSruLELJ";
+  const height = 25571285;
+
+  const delegations = await queryDelegations(api, height, address);
+  console.log("delegations", delegations);
+}
+
+;(async () => {
+  await binarySearch();
+  // await queryAddrDelegations();
   process.exit(0)
 })();
