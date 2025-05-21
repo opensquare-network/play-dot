@@ -31,7 +31,8 @@ async function getRelayChainHeight(paraApi, height) {
 
 (async () => {
   const api = await getCommonApi("wss://westend-asset-hub-rpc.polkadot.io/");
-  const height = 11716647;
+  // const height = 11716647;
+  const height = 11746390;
   // const has = await hasReferenda(api, height);
   // console.log(`${height} ${has ? "has" : "not has"} referenda`);
   console.log(await getRelayChainHeight(api, height));
