@@ -5,7 +5,7 @@ const { createKeyMulti, encodeAddress } = require("@polkadot/util-crypto");
 let provider = null;
 let api = null;
 
-const dotEndPoint = "wss://kusama.elara.patract.io/";
+const dotEndPoint = "wss://kusama-rpc.polkadot.io";
 
 async function getApi() {
   if (!api) {

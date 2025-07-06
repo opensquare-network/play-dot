@@ -1,4 +1,5 @@
 const { ApiPromise, WsProvider } = require("@polkadot/api");
+const { findBlockHash } = require("./blockHash");
 
 let provider = null;
 let api = null;
@@ -16,6 +17,11 @@ async function getCommonApi(endPoint) {
   return api;
 }
 
+async function findBlockApi(api, height) {
+  const blockHash = await findBlockHash(height, api);
+  return await api.at(blockHash);
+}
+
 async function getCommonProvider(endPoint) {
   if (!provider) {
     await init(endPoint);
@@ -27,4 +33,5 @@ async function getCommonProvider(endPoint) {
 module.exports = {
   getCommonApi,
   getCommonProvider,
+  findBlockApi,
 }
