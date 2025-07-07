@@ -14,9 +14,17 @@ async function getValidators(api, height) {
   console.log("validators", validators);
 }
 
+async function getValidatorsBySession(api, height) {
+  const blockHash = await findBlockHash(height, api);
+  const blockApi = await api.at(blockHash);
+  const validators = await blockApi.query.session?.validators();
+  console.log("validators", validators);
+}
+
 (async () => {
   const api = await getCommonApi("wss://rpc.polkadot.io");
-  await getValidators(api, 6713103);
+  // await getValidators(api, 6713103);
+  await getValidatorsBySession(api, 6713103);
 
   process.exit(0);
 })();
