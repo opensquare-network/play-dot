@@ -7,8 +7,9 @@ async function hasForeignAssets(api, height) {
 }
 
 (async () => {
-  const api = await getCommonApi("wss://polkadot-asset-hub-rpc.polkadot.io/");
-  let start = 1, end = 8459328;
+  // const api = await getCommonApi("wss://polkadot-asset-hub-rpc.polkadot.io/");
+  const api = await getCommonApi("wss://kusama-asset-hub-rpc.polkadot.io");
+  let start = 1, end = 9980000;
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2 + "");
     const yes = await hasForeignAssets(api, middle);
