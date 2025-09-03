@@ -17,23 +17,31 @@ function gte6M(v) {
   return new BigNumber(v).gte(6000000);
 }
 
+function gte2M(v) {
+  return new BigNumber(v).gte(2000000);
+}
+
+function gte200K(v) {
+  return new BigNumber(v).gte(200000);
+}
+
 async function isDv(api, height, address) {
   const delegations = await queryDelegations(api, height, address);
-  return gte6M(delegations);
+  return gte200K(delegations);
 }
 
 async function binarySearch() {
   const api = await getApi();
-  const address = "12pXignPnq8sZvPtEsC3RdhDLAscqzFQz97pX2tpiNp3xLqo";
-  let start = 23364976, end = 25571285;
+  const address = "15oLanodWWweiZJSoDTEBtrX7oGfq6e8ct5y5E6fVRDPhUgj";
+  let start = 27578500, end = 27580020;
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
     const yes = await isDv(api, middle, address);
     if (yes) {
-      start = middle;
+      end = middle;
       console.log(`${ middle } is DV`);
     } else {
-      end = middle;
+      start = middle;
     }
 
     console.log("start", start, "end", end, "middle", middle);

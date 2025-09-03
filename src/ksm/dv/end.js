@@ -28,8 +28,8 @@ async function isDv(api, height, address) {
 ;(async () => {
   const api = await getApi();
 
-  const address = "ELCdsyWFNC7twEeBcQvdpCmpJhGBgiVeWtaKqRqXGn5ATiA";
-  let start = 23707164, end = 27951456;
+  const address = "JHTfbt39EL1CcbKteN6hG5L5pWo9XWi9XFiyuS9q24cAc8u";
+  let start = 27921178, end = 29913089;
 
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);

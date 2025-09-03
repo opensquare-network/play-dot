@@ -14,7 +14,7 @@ async function queryDelegations(api, height, address) {
 }
 
 function gte6M(v) {
-  return new BigNumber(v).gte(6200000);
+  return new BigNumber(v).gte(6000000);
 }
 
 async function isDv(api, height, address) {
@@ -27,8 +27,8 @@ async function isDv(api, height, address) {
 
 ;(async () => {
   const api = await getApi();
-  const address = "13EyMuuDHwtq5RD6w3psCJ9WvJFZzDDion6Fd2FVAqxz1g7K";
-  let start = 22703699, end = 22903699;
+  const address = "13z9CiETVYCrxz3cghDuTyRGbaYQrwSyRnRcJX5iFbXvrwhT";
+  let start = 25571027, end = 27580020;
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
     const { delegations, isDv: yes } = await isDv(api, middle, address);
