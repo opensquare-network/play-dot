@@ -4,12 +4,13 @@ let api = null;
 
 // const statemineEndPoint = "wss://kusama-statemine-rpc.paritytech.net";
 // const statemineEndPoint = "wss://statemine.api.onfinality.io/public-ws";
-const statemineEndPoint = "wss://testnet-rpc.tangle.tools/";
+// const statemineEndPoint = "wss://testnet-rpc.tangle.tools/";
+const endPoint = "wss://archive.testnet.cere.network/ws";
 // const statemineEndPoint = "wss://pub.elara.patract.io/statemine";
 
 async function getApi() {
   if (!api) {
-    provider = new WsProvider(statemineEndPoint);
+    provider = new WsProvider(endPoint);
     api = await ApiPromise.create({ provider });
   }
 
@@ -23,5 +24,4 @@ async function getApi() {
     const height = header.number.toNumber();
     console.log('finalized', height)
   });
-
 })()

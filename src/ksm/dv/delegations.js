@@ -14,7 +14,7 @@ async function queryDelegations(api, height, address) {
 }
 
 function gte30k(v) {
-  return new BigNumber(v).gte(90000);
+  return new BigNumber(v).gte(30000);
 }
 
 async function isDv(api, height, address) {
@@ -24,8 +24,8 @@ async function isDv(api, height, address) {
 
 async function findPoint() {
   const api = await getApi();
-  const address = "DCZyhphXsRLcW84G9WmWEXtAA8DKGtVGSFZLJYty8Ajjyfa";
-  let start = 23551312, end = 25829708;
+  const address = "D8LipdVuWD5tT3jCjt4WmYMfHi1vRVjpfbK9cz2G2HrWRLw";
+  let start = 29912023, end = 30547119;
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2);
     const yes = await isDv(api, middle, address);

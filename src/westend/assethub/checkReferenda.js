@@ -3,11 +3,16 @@ const { getCommonApi } = require("../../common/api");
 async function hasReferenda(api, height) {
   const blockHash = await api.rpc.chain.getBlockHash(height);
   const blockApi = await api.at(blockHash);
-  return !!blockApi.query.referenda;
+  if (!blockApi.query.referenda) {
+    return false;
+  }
+
+  const entries = await blockApi.query.referenda.referendumInfoFor.entries();
+  return entries.length > 0;
 }
 
 async function binaryFindReferenda(api) {
-  let start = 1000000, end = 2594248;
+  let start = 11150000, end = 11151102;
   while (start < end - 1) {
     let middle = parseInt((start + end) / 2 + '');
     const yes = await hasReferenda(api, middle);
@@ -31,13 +36,14 @@ async function getRelayChainHeight(paraApi, height) {
 
 (async () => {
   // const api = await getCommonApi("wss://westend-asset-hub-rpc.polkadot.io/");
-  const api = await getCommonApi("wss://pas-rpc.stakeworld.io/assethub"); // for paseo
-  // await binaryFindReferenda(api);
+  // const api = await getCommonApi("wss://pas-rpc.stakeworld.io/assethub"); // for paseo
+  const api = await getCommonApi("wss://ksm-rpc.stakeworld.io/assethub"); // for kusama
+  await binaryFindReferenda(api);
   // const height = 11716647;
-  const height = 2568458;
-  const has = await hasReferenda(api, height);
-  console.log(`${height} ${has ? "has" : "not has"} referenda`);
-  console.log(await getRelayChainHeight(api, height));
+  // const height = 2568458;
+  // const has = await hasReferenda(api, height);
+  // console.log(`${height} ${has ? "has" : "not has"} referenda`);
+  // console.log(await getRelayChainHeight(api, height));
 
   process.exit(0);
 })();
