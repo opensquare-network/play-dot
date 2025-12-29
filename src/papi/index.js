@@ -1,8 +1,8 @@
-const { createClient,  } = require("polkadot-api");
-const { getWsProvider } = require("@polkadot-api/ws-provider/node");
-const { dot } = require("@polkadot-api/descriptors");
-
 (async () => {
+  const { createClient } = await import("polkadot-api");
+  const { getWsProvider } = await import("@polkadot-api/ws-provider/node");
+  const { dot } = await import("@polkadot-api/descriptors");
+
   // console.log(test);
   const provider = await getWsProvider("wss://rpc.ibp.network/polkadot");
   const client = createClient(provider);
