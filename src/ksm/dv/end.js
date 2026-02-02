@@ -9,7 +9,12 @@ async function queryDelegations(api, height, address) {
   }
 
   const rawVotingFor = await blockApi.query.convictionVoting.votingFor(address, 33);
-  const delegations = rawVotingFor.asCasting.delegations.votes.toString() / Math.pow(10, 12);
+  let delegations;
+  if (rawVotingFor.isCasting) {
+    delegations = rawVotingFor.asCasting.delegations.votes.toString() / Math.pow(10, 12);
+  } else {
+    delegations = rawVotingFor.asDelegating.delegations.votes.toString() / Math.pow(10, 12);
+  }
   return delegations;
 }
 
@@ -28,17 +33,17 @@ async function isDv(api, height, address) {
 ;(async () => {
   const api = await getApi();
 
-  const address = "EyPcJsHXv86Snch8GokZLZyrucug3gK1RAghBD2HxvL1YRZ";
-  let start = 29900000, end = 29940500;
+  const address = "GNdJk9L6P84JXu6wibTzwPiB3vt2rwMjzGEETchf87uNuyW";
+  let start = 11160996, end = 12754903;
 
   while (start < end - 1) {
-    let middle = parseInt((start + end) / 2);
+    let middle = parseInt((start + end) / 2 + "");
     const { delegations, isDv: yes } = await isDv(api, middle, address);
     if (yes) {
-      end = middle;
+      start = middle;
       console.log(`${ middle } is DV`);
     } else {
-      start = middle;
+      end = middle;
     }
 
     console.log("start", start, "end", end, "middle", middle);

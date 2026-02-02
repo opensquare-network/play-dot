@@ -7,12 +7,15 @@ let api = null;
 // const polkadotEndPoint = "wss://polkadot-rpc.dwellir.com";
 // const polkadotEndPoint = "wss://polkadot-rpc-tn.dwellir.com";
 // const polkadotEndPoint = "wss://rpc.ibp.network/polkadot";
-const polkadotEndPoint = "wss://polkadot.api.onfinality.io/public-ws";
+// const polkadotEndPoint = "wss://polkadot.api.onfinality.io/public-ws";
 // const polkadotEndPoint = "wss://rpc.dotters.network/polkadot";
 // const polkadotEndPoint = "wss://polkadot.public.curie.radiumblock.co/ws";
 
+const polkadotAssethubEndPoint = "wss://statemint.api.onfinality.io/public-ws";
+// const polkadotAssethubEndPoint = "wss://polkadot-asset-hub-rpc.polkadot.io";
+
 async function init() {
-  provider = new WsProvider(polkadotEndPoint);
+  provider = new WsProvider(polkadotAssethubEndPoint);
   api = await ApiPromise.create({ provider });
 }
 
